@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    
-    <h1>TEST TEXT</h1>
-    <h3>Check this is still working?</h3>
+
+<h1>TEST TEXT</h1>
+<h3>Check this is still working?</h3>
+
+    <ul>
+    {% for name in collection %}
+        <li>
+            <p>{{ name }}</p>
+        </li>
+    {% endfor %}
+    </ul>
 
 {% endblock %}

@@ -6,12 +6,15 @@ from os import path
 if path.exists("env.py"):
     import env
 
+
 app = Flask(__name__)
+
 
 app.config["MONGO_DBNAME"] = 'wt_database'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
-print(os.environ.get("MONGO_URI"))
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
@@ -21,7 +24,8 @@ def hello():
 
 @app.route('/test')
 def test():
-    return render_template("test.html")
+    return render_template("test.html",
+    collection=mongo.db.wt_collection.find())
 
 
 if __name__ == '__main__':
