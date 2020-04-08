@@ -34,6 +34,31 @@ def mylists():
     collection=mongo.db.wt_collection.find())
 
 
+@app.route('/listitems')
+def listitems():
+    return render_template("listitems.html",
+    collection=mongo.db.wt_collection.find())
+
+
+@app.route('/additem')
+def additem():
+    return render_template("additem.html")
+
+
+@app.route('/edititem')
+def edititem():
+    return render_template("edititem.html")
+
+
+@app.route('/newlist')
+def newlist():
+    return render_template("newlist.html")
+
+
+@app.route('/editlist')
+def editlist():
+    return render_template("editlist.html")
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),

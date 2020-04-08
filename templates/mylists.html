@@ -6,10 +6,17 @@
 
 <ul>
     {% for name in collection %}
-        <li>{{ name.list_name }}</li>
-        <p>No of items (to be updated after nesting objects set up)</p>
-        <p>Edit button and delete button</p>
+        <li>
+            <a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
+            <p>No of items (to be updated after nesting objects set up)</p>
+            <a href="{{ url_for('editlist') }}">Edit List Button</a>
+            <a href="">Delete List Button</a>
+        </li>
     {% endfor %}
 </ul>
+
+<a href="{{ url_for('newlist') }}">Start a new list</a>
+<br>
+<a href="{{ url_for('additem') }}">Add item +</a>
 
 {% endblock %}
