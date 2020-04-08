@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>MY LISTS PAGE</h1>
+
+<ul>
+    {% for name in collection %}
+        <li>{{ name.list_name }}</li>
+        <p>No of items (to be updated after nesting objects set up)</p>
+        <p>Edit button and delete button</p>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -19,12 +19,18 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def hello():
-    return 'Hello World! Again...'
+    return render_template("welcomepage.html")
 
 
 @app.route('/test')
 def test():
     return render_template("test.html",
+    collection=mongo.db.wt_collection.find())
+
+
+@app.route('/mylists')
+def mylists():
+    return render_template("mylists.html",
     collection=mongo.db.wt_collection.find())
 
 
