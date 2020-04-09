@@ -7,44 +7,47 @@
 <form action="/additem" method="POST">
     <div class="form-group">
         <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
-        <select class="form-control" id="additem_listname" name="additem_listname">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select class="form-control" id="list_name" name="list_name">
+            <option>Summer wardrobe</option>
+            <option>Jackets</option>
+            <option>Amy's wedding</option>
+            <option>Trainers</option>
         </select>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput">Link to product (required)</label>
-        <input type="text" class="form-control" id="additem_productlink" placeholder="Example input" name="additem_productlink">
+        <input type="text" class="form-control" id="product_link" placeholder="Example input" name="product_link">
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput">Brand (required)</label>
-        <input type="text" class="form-control" id="additem_brandname" placeholder="Example input" name="additem_brandname">
+        <input type="text" class="form-control" id="brand_name" placeholder="Example input" name="brand_name">
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Category / product type (required)</label>
-        <select class="form-control" id="additem_productcat" name="additem_productcat">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select class="form-control" id="product_type" name="product_type">
+            <option>Trainers</option>
+            <option>Shirts</option>
+            <option>Trousers</option>
+            <option>Jackets</option>
+            <option>Skirts</option>
         </select>
     </div>
     <div class="form-group">
+        <label for="exampleFormControlInput1">Description (optional)</label>
+        <input type="text" class="form-control" id="item_description" name="item_description" placeholder="Item Description">
+  </div>
+    <div class="form-group">
         <label for="formGroupExampleInput">Price (required)</label>
-        <input type="text" class="form-control" id="additem_price" placeholder="Example input" name="additem_price">
+        <input type="text" class="form-control" id="item_price" placeholder="Example input" name="item_price">
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">How much do I need this? (required)</label>
-        <select class="form-control" id="additem_urgency" name="additem_urgency">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <select class="form-control" id="need_rating" name="need_rating">
+        <option>I'm being greedy</option>
+        <option>Kind of?</option>
+        <option>Not urgently</option>
+        <option>Need it and will use it every day</option>
+        <option>ASAP!</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Add Item</button>

@@ -30,18 +30,42 @@ def test():
     collection=mongo.db.wt_collection.find())
 
 
+# Function to view lists
 @app.route("/mylists")
 def mylists():
     return render_template('mylists.html',
     collection=mongo.db.wt_collection.find())
 
 
+# Function to create a new list
+# @app.route("/newlist", methods=["GET", "POST"])
+# def newlist():
+
+#     if request.method == 'GET':
+#         return render_template('newlist.html')
+
+#     if request.method == 'POST':
+#         list_name = request.form['list_name']
+#         list_category = request.form['list_category']
+#         list_description = request.form['list_description']
+
+#         newly_added_list = {'list_name': list_name,
+#                             'list_category': list_category,
+#                             'list_description': list_description}
+
+#         coll.insert_one(newly_added_list)
+
+#     return redirect(url_for('mylists'))
+
+
+# Function to view all items in a list
 @app.route("/listitems")
 def listitems():
     return render_template('listitems.html',
     collection=mongo.db.wt_collection.find())
 
 
+# Function to add a new item to a list
 @app.route("/additem", methods=["GET", "POST"])
 def additem():
 
@@ -49,23 +73,25 @@ def additem():
         return render_template('additem.html')
 
     if request.method == 'POST':
-        additem_listname = request.form['additem_listname']
-        additem_productlink = request.form['additem_productlink']
-        additem_brandname = request.form['additem_brandname']
-        additem_productcat = request.form['additem_productcat']
-        additem_price = request.form['additem_price']
-        additem_urgency = request.form['additem_urgency']
+        list_name = request.form['list_name']
+        product_link = request.form['product_link']
+        brand_name = request.form['brand_name']
+        product_type = request.form['product_type']
+        item_description = request.form['item_description']
+        item_price = request.form['item_price']
+        need_rating = request.form['need_rating']
 
-        newly_added_item = {'additem_listname': additem_listname,
-                            'additem_productlink': additem_productlink,
-                            'additem_brandname': additem_brandname,
-                            'additem_productcat': additem_productcat,
-                            'additem_price': additem_price,
-                            'additem_urgency': additem_urgency}
+        newly_added_item = {'list_name': list_name,
+                            'product_link': product_link,
+                            'brand_name': brand_name,
+                            'product_type': product_type,
+                            'item_price': item_price,
+                            'need_rating': need_rating}
 
         coll.insert_one(newly_added_item)
+        
+    return redirect(url_for('listitems'))
 
-    return render_template('listitems.html')
 
 @app.route("/create")
 def create():
@@ -84,15 +110,9 @@ def edititem():
     return render_template('edititem.html')
 
 
-@app.route("/newlist")
-def newlist():
-    return render_template('newlist.html')
-
-
 @app.route("/editlist")
 def editlist():
     return render_template('editlist.html')
-
 
 
 if __name__ == '__main__':
