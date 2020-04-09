@@ -4,4 +4,49 @@
 
 <h1>Add an item</h1>
 
+<form action="/additem" method="POST">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
+        <select class="form-control" id="additem_listname" name="additem_listname">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Link to product (required)</label>
+        <input type="text" class="form-control" id="additem_productlink" placeholder="Example input" name="additem_productlink">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Brand (required)</label>
+        <input type="text" class="form-control" id="additem_brandname" placeholder="Example input" name="additem_brandname">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Category / product type (required)</label>
+        <select class="form-control" id="additem_productcat" name="additem_productcat">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Price (required)</label>
+        <input type="text" class="form-control" id="additem_price" placeholder="Example input" name="additem_price">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">How much do I need this? (required)</label>
+        <select class="form-control" id="additem_urgency" name="additem_urgency">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+</form>
 {% endblock %}
