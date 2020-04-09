@@ -59,6 +59,12 @@ def newlist():
     return redirect(url_for('additem'))
 
 
+# Function to edit a list
+@app.route("/editlist")
+def editlist():
+    return render_template('editlist.html')
+
+
 # Function to view all items in a list
 @app.route("/listitems")
 def listitems():
@@ -107,15 +113,15 @@ def create():
     return render_template('create.html', document=new_list_item)
 
 
+# Function to edit an item
 @app.route("/edititem/<item_id>")
 def edititem(item_id):
-    _item = mongo.db.wt_collection.find_one({'_id': ObjectId(item_id)})
+    _item = mongo.db.wt_listitems.find_one({'_id': ObjectId(item_id)})
     print(_item)
-    return render_template('edititem.html', document=_item)
 
-@app.route("/editlist")
-def editlist():
-    return render_template('editlist.html')
+    return render_template('edititem.html', item_info=_item)
+
+
 
 
 if __name__ == '__main__':
