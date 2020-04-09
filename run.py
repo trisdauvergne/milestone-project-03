@@ -17,7 +17,8 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
-coll = mongo.db.wt_collection
+listcoll = mongo.db.wt_collection
+itemcoll = mongo.db.wt_listitems
 
 @app.route("/")
 def hello():
@@ -38,31 +39,31 @@ def mylists():
 
 
 # Function to create a new list
-# @app.route("/newlist", methods=["GET", "POST"])
-# def newlist():
+@app.route("/newlist", methods=["GET", "POST"])
+def newlist():
 
-#     if request.method == 'GET':
-#         return render_template('newlist.html')
+    if request.method == 'GET':
+        return render_template('newlist.html')
 
-#     if request.method == 'POST':
-#         list_name = request.form['list_name']
-#         list_category = request.form['list_category']
-#         list_description = request.form['list_description']
+    if request.method == 'POST':
+        list_name = request.form['list_name']
+        list_category = request.form['list_category']
+        list_description = request.form['list_description']
 
-#         newly_added_list = {'list_name': list_name,
-#                             'list_category': list_category,
-#                             'list_description': list_description}
+        newly_added_list = {'list_name': list_name,
+                            'list_category': list_category,
+                            'list_description': list_description}
 
-#         coll.insert_one(newly_added_list)
+        listcoll.insert_one(newly_added_list)
 
-#     return redirect(url_for('mylists'))
+    return redirect(url_for('additem'))
 
 
 # Function to view all items in a list
 @app.route("/listitems")
 def listitems():
     return render_template('listitems.html',
-    collection=mongo.db.wt_collection.find())
+    collection=mongo.db.wt_listitems.find())
 
 
 # Function to add a new item to a list
@@ -70,7 +71,8 @@ def listitems():
 def additem():
 
     if request.method == 'GET':
-        return render_template('additem.html')
+        return render_template('additem.html',
+        list=mongo.db.wt_collection.find())
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -88,8 +90,8 @@ def additem():
                             'item_price': item_price,
                             'need_rating': need_rating}
 
-        coll.insert_one(newly_added_item)
-        
+        itemcoll.insert_one(newly_added_item)
+
     return redirect(url_for('listitems'))
 
 
@@ -100,15 +102,16 @@ def create():
                      'price': '250SEK',
                      'description': 'White oversized t-shirt'}
 
-    mongo.db.wt_collection.insert_one(new_list_item)
+    mongo.db.wt_listitems.insert_one(new_list_item)
 
     return render_template('create.html', document=new_list_item)
 
 
-@app.route("/edititem")
-def edititem():
-    return render_template('edititem.html')
-
+@app.route("/edititem/<item_id>")
+def edititem(item_id):
+    _item = mongo.db.wt_collection.find_one({'_id': ObjectId(item_id)})
+    print(_item)
+    return render_template('edititem.html', document=_item)
 
 @app.route("/editlist")
 def editlist():

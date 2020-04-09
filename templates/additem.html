@@ -4,14 +4,13 @@
 
 <h1>Add an item</h1>
 
-<form action="/additem" method="POST">
+<form action="{{ url_for('additem') }}" method="POST">
     <div class="form-group">
         <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
         <select class="form-control" id="list_name" name="list_name">
-            <option>Summer wardrobe</option>
-            <option>Jackets</option>
-            <option>Amy's wedding</option>
-            <option>Trainers</option>
+            {% for name in list %}
+                <option value="{{ name.list_name }}">{{ name.list_name }}</option>
+            {% endfor %}
         </select>
     </div>
     <div class="form-group">

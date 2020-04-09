@@ -8,16 +8,17 @@
 <br>
 
 <ul>
-    {% for item in collection %}
-        <li>{{ item.list_name }}</li>
-        <li>{{ item.brand_name }}</li>
-        <li>{{ item.product_type }}</li>
-        <li>{{ item.item_price }}</li>
-        <li>{{ item.need_rating }}</li>
-        <a href="{{ url_for('edititem') }}">Edit Item Button</a>
-        <a href="">Delete Item Button</a>
-        <br>
-    {% endfor %}
+	{% for item in collection %}
+	<li>{{ item.list_name }}</li>
+	<li>{{ item.brand_name }}</li>
+	<li>{{ item.product_type }}</li>
+	<li>{{ item.item_price }}</li>
+	<li>{{ item.need_rating }}</li>
+	<a href="{{ url_for('edititem', item_id=item._id) }}">Edit Item Button</a>
+	<a href="">Delete Item Button</a>
+	<br>
+{% endfor %}
+
 </ul>
 
-{% endblock %}
+	{% endblock %}
