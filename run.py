@@ -93,6 +93,7 @@ def additem():
                             'product_link': product_link,
                             'brand_name': brand_name,
                             'product_type': product_type,
+                            'item_description': item_description,
                             'item_price': item_price,
                             'need_rating': need_rating}
 
@@ -114,14 +115,14 @@ def create():
 
 
 # Function to edit an item
-@app.route("/edititem/<item_id>")
+@app.route("/edititem/<item_id>", methods=["GET", "POST"])
 def edititem(item_id):
     _item = mongo.db.wt_listitems.find_one({'_id': ObjectId(item_id)})
     print(_item)
 
-    return render_template('edititem.html', item_info=_item)
-
-
+    return render_template('edititem.html', 
+                            item_info=_item, 
+                            list=mongo.db.wt_collection.find())
 
 
 if __name__ == '__main__':
