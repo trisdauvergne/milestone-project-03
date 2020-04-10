@@ -9,8 +9,8 @@
         <li>
             <a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
             <p>No of items (to be updated after nesting objects set up)</p>
-            <a href="{{ url_for('editlist') }}">Edit List Button</a>
-            <a href="">Delete List Button</a>
+            <a href="{{ url_for('editlist', list_id=name._id) }}">Edit List Button</a>
+            <a href="{{ url_for('deletelist', list_id=name._id) }}">Delete List Button</a>
         </li>
     {% endfor %}
 </ul>

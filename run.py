@@ -60,9 +60,19 @@ def newlist():
 
 
 # Function to edit a list
-@app.route("/editlist")
-def editlist():
-    return render_template('editlist.html')
+@app.route("/editlist/<list_id>", methods=["GET", "POST"])
+def editlist(list_id):
+    _lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
+
+    return render_template('editlist.html',
+                            list_info=_lists)
+
+
+@app.route("/deletelist/<list_id>")
+def deletelist(list_id):
+    mongo.db.wt_collection.remove({'_id': ObjectId(list_id)})
+
+    return redirect(url_for('mylists'))
 
 
 # Function to view all items in a list
@@ -125,11 +135,13 @@ def edititem(item_id):
                             list=mongo.db.wt_collection.find())
 
 
-@app.route("/delete_item/<item_id>")
-def delete_item(item_id):
+@app.route("/deleteitem/<item_id>")
+def deleteitem(item_id):
     mongo.db.wt_listitems.remove({'_id': ObjectId(item_id)})
 
     return redirect(url_for('listitems'))
+
+
 
 
 if __name__ == '__main__':
