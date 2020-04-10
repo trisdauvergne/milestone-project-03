@@ -4,7 +4,7 @@
 
 <h1> Edit Item </h1>
 
-<form action="{{ url_for('edititem', item_id=_item) }}" method="POST">
+<form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST">
     <div class="form-group">
         <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
         <select class="form-control" id="list_name" name="list_name">
