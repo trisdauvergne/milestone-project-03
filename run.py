@@ -64,6 +64,19 @@ def newlist():
 def editlist(list_id):
     _lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
 
+    if request.method == 'POST':
+        list_name = request.form['list_name']
+        list_category = request.form['list_category']
+        list_description = request.form['list_description']
+
+        updated_list = {'list_name': list_name,
+                        'list_category': list_category,
+                        'list_description': list_description}
+
+        mongo.db.wt_collection.update({'_id': ObjectId(item_id)}, updated_item)
+
+        return redirect(url_for('mylists'))
+
     return render_template('editlist.html',
                             list_info=_lists)
 
