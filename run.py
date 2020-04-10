@@ -125,6 +125,13 @@ def edititem(item_id):
                             list=mongo.db.wt_collection.find())
 
 
+@app.route("/delete_item/<item_id>")
+def delete_item(item_id):
+    mongo.db.wt_listitems.remove({'_id': ObjectId(item_id)})
+
+    return redirect(url_for('listitems'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
