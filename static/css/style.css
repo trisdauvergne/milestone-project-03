@@ -4,9 +4,37 @@ body {
     font-family: 'Heebo', sans-serif !important;
 }
 
-/* Navbar */
+/* Navbar elements for bootstrap  */
+.navbar {
+    color: black;
+}
 
-.topnav {
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+}
+
+.navbar-logo {
+    color:black;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.nav-link {
+    font-size: 25px;
+    font-weight: 300;
+    color: black !important;
+}
+
+.navbar-container {
+    display: inline-block;
+}
+
+/* Responsive navbar from W3 Schools */
+
+/* .topnav {
     color: red;
 }
 
@@ -59,13 +87,13 @@ body {
     display: block;
     text-align: left;
   }
-}
+} */
 
 /* To make the divs go edge to edge */
 .container-fluid.full-width {
     padding-left: 0;
     padding-right: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .row.row-no-gutter {
@@ -74,3 +102,4 @@ body {
 
 .row.row-no-gutter [class*="col-"] {
     padding: 0
+}
