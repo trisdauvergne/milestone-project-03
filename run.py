@@ -1,5 +1,7 @@
 import os
 import operator
+import requests
+from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
