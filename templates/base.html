@@ -15,17 +15,14 @@
 <body>
 	<div class="container-fluid full-width sticky">
 		<div class="row row-no-gutter">
-
 			<div class="col-12 sticky">
 				<nav class="navbar navbar-expand-md navbar-light">
 					<!-- Brand -->
 					<a class="navbar-logo" href="{{ url_for('mylists') }}">Want That</a>
-
 					<!-- Toggler/collapsibe Button -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
 					<!-- Navbar links -->
 					<div class="collapse navbar-collapse" id="collapsibleNavbar">
 						<ul class="navbar-nav">
@@ -41,9 +38,13 @@
 									Add Item <strong>+</strong>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<!-- <a class="dropdown-item" href="#">List name (needs to be input from data)</a>
 									<a class="dropdown-item" href="#">List name (needs to be input from data)</a>
-									<a class="dropdown-item" href="#">List name (needs to be input from data)</a>
-									<a class="dropdown-item" href="#">List name (needs to be input from data)</a>
+									<a class="dropdown-item" href="#">List name (needs to be input from data)</a> -->
+
+                                    {% for name in list %}
+                                        <a class="dropdown-item" href="{{ url_for('listitems') }}" value="{{ name.list_name }}">{{ name.list_name }}</a>
+                                    {% endfor %}
 								</div>
 							</li>
 							</li>

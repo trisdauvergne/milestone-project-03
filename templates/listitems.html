@@ -3,11 +3,13 @@
 {% block content %}
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
+    
 		<div class="col-12">
 			<h1>List Items</h1>
 			<p>List name (with edit and delete button)</p>
 			<p>Filter by:</p>
 		</div>
+
 		<div class="col-12">
 			<ul>
 				{% for item in collection %}
@@ -23,6 +25,7 @@
             {% endfor %}
             </ul>
 		</div>
+
 		<div class="col-12">
 			<a href="{{ url_for('additem') }}">Add item +</a>
 		</div>

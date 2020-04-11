@@ -100,6 +100,7 @@ def listitems():
 #     return render_template('listitems.html',
 #     collection=request.args['listname'])
 
+
 # Function to add a new item to a list
 @app.route("/additem", methods=["GET", "POST"])
 def additem():

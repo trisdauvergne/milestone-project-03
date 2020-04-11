@@ -7,25 +7,37 @@ body {
 /* Navbar elements for bootstrap  */
 .navbar {
     color: black;
+    border-bottom: 5px solid black;
 }
 
 .sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: yellow;
+    background-color: white;
+    z-index: 1;
 }
 
 .navbar-logo {
     color:black;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .nav-link {
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
     color: black !important;
+}
+
+.justify-right {
+    float: right;
+    width: 63%;
+}
+
+.justify-left {
+    float: left;
+    width: 30%;
 }
 
 .navbar-container {
@@ -93,7 +105,7 @@ body {
 .container-fluid.full-width {
     padding-left: 0;
     padding-right: 0;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 .row.row-no-gutter {
