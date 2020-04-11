@@ -4,6 +4,10 @@ body {
     font-family: 'Heebo', sans-serif !important;
 }
 
+.general-margin {
+    margin: 0 2%;
+}
+
 /* Navbar elements for bootstrap  */
 .navbar {
     color: black;
@@ -28,16 +32,6 @@ body {
     font-size: 25px;
     font-weight: 400;
     color: black !important;
-}
-
-.justify-right {
-    float: right;
-    width: 63%;
-}
-
-.justify-left {
-    float: left;
-    width: 30%;
 }
 
 .navbar-container {
