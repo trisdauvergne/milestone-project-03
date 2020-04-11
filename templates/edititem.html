@@ -2,29 +2,33 @@
 
 {% block content %}
 
-<h1> Edit Item </h1>
+<div class="container-fluid full-width">
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			<h1> Edit Item </h1>
+		</div>
 
-<form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST">
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
-        <select class="form-control" id="list_name" name="list_name">
+		<form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST">
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">List name (to be a preset value)</label>
+				<select class="form-control" id="list_name" name="list_name">
             <option value="{{ item_info.list_name }}">{{ item_info.list_name }}</option>
             {% for name in list %}
                 <option value="{{ name.list_name }}">{{ name.list_name }}</option>
             {% endfor %}
         </select>
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Link to product (required)</label>
+				<input type="text" class="form-control" id="product_link" value="{{ item_info.product_link}}" name="product_link">
     </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput">Link to product (required)</label>
-        <input type="text" class="form-control" id="product_link" value="{{ item_info.product_link}}" name="product_link">
+				<div class="form-group">
+					<label for="formGroupExampleInput">Brand (required)</label>
+					<input type="text" class="form-control" id="brand_name" value="{{ item_info.brand_name }}" name="brand_name">
     </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput">Brand (required)</label>
-        <input type="text" class="form-control" id="brand_name" value="{{ item_info.brand_name }}" name="brand_name">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Category / product type (required)</label>
-        <select class="form-control" id="product_type" name="product_type">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Category / product type (required)</label>
+						<select class="form-control" id="product_type" name="product_type">
             <option>{{ item_info.product_type }}</option>
             <option>Trainers</option>
             <option>Shirt</option>
@@ -34,18 +38,18 @@
             <option>Scarf</option>
             <option>T-shirt</option>
         </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Description (optional)</label>
-        <input type="text" class="form-control" id="item_description" name="item_description" value="{{ item_info.item_description }}">
+					</div>
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Description (optional)</label>
+						<input type="text" class="form-control" id="item_description" name="item_description" value="{{ item_info.item_description }}">
   </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput">Price (required)</label>
-        <input type="text" class="form-control" id="item_price" value="{{ item_info.item_price }}" name="item_price">
+						<div class="form-group">
+							<label for="formGroupExampleInput">Price (required)</label>
+							<input type="text" class="form-control" id="item_price" value="{{ item_info.item_price }}" name="item_price">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">How much do I need this? (required)</label>
-        <select class="form-control" id="need_rating" name="need_rating">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">How much do I need this? (required)</label>
+								<select class="form-control" id="need_rating" name="need_rating">
         <option>{{ item_info.need_rating }}</option>
         <option>I'm being greedy</option>
         <option>Kind of?</option>
@@ -53,8 +57,10 @@
         <option>Need it and will use it every day</option>
         <option>ASAP!</option>
         </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Update Item</button>
-</form>
+							</div>
+							<button type="submit" class="btn btn-primary">Update Item</button>
+		</form>
+	</div>
+</div>
 
 {% endblock %}

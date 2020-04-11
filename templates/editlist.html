@@ -1,28 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1> Edit List </h1>
-
-<form action="{{ url_for('editlist', list_id=list_info._id)}}" method="POST">
-    <div class="form-group">
-        <label for="formGroupExampleInput">List name (required)</label>
-        <input type="text" class="form-control" id="list_name" placeholder="Example input" name="list_name">
+<div class="container-fluid full-width">
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			<h1> Edit List </h1>
+		</div>
+		<div class="col-12">
+			<form action="{{ url_for('editlist', list_id=list_info._id)}}" method="POST">
+				<div class="form-group">
+					<label for="formGroupExampleInput">List name (required)</label>
+					<input type="text" class="form-control" id="list_name" placeholder="Example input" name="list_name">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">List category (required)</label>
-        <select class="form-control" id="list_category" name="list_category">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">List category (required)</label>
+						<select class="form-control" id="list_category" name="list_category">
             <option>Super important urgent need need need</option>
             <option>Gifts (not for me sadly)</option>
             <option>Wish list</option>
             <option>Necessary but not urgent</option>
         </select>
+					</div>
+					<div class="form-group">
+						<label for="exampleFormControlInput1">List description (optional)</label>
+						<input type="text" class="form-control" id="list_description" name="list_description" placeholder="List Description">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">List description (optional)</label>
-        <input type="text" class="form-control" id="list_description" name="list_description" placeholder="List Description">
-    </div>
-    <button type="submit" class="btn btn-primary">Edit List</button>
-</form>
+						<button type="submit" class="btn btn-primary">Edit List</button>
+			</form>
+		</div>
+	</div>
+</div>
 
 {% endblock %}

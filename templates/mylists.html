@@ -2,21 +2,28 @@
 
 {% block content %}
 
-<h1>MY LISTS PAGE</h1>
-
-<ul>
-    {% for name in collection %}
-        <li>
-            <a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
-            <p>No of items (to be updated after nesting objects set up)</p>
-            <a href="{{ url_for('editlist', list_id=name._id) }}">Edit List Button</a>
-            <a href="{{ url_for('deletelist', list_id=name._id) }}">Delete List Button</a>
-        </li>
-    {% endfor %}
-</ul>
-
-<a href="{{ url_for('newlist') }}">Start a new list</a>
-<br>
-<a href="{{ url_for('additem') }}">Add item +</a>
-
+<div class="container-fluid full-width">
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			<h1>MY LISTS PAGE</h1>
+		</div>
+		<div class="col-12">
+			<ul>
+				{% for name in collection %}
+				<li>
+					<a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
+					<p>No of items (to be updated after nesting objects set up)</p>
+					<a href="{{ url_for('editlist', list_id=name._id) }}">Edit List Button</a>
+					<a href="{{ url_for('deletelist', list_id=name._id) }}">Delete List Button</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-12">
+			<a href="{{ url_for('newlist') }}">Start a new list</a>
+			<br>
+			<a href="{{ url_for('additem') }}">Add item +</a>
+		</div>
+	</div>
+</div>
 {% endblock %}

@@ -1,26 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1>List Items</h1>
-<p>List name (with edit and delete button)</p>
-<p>Filter by:</p>
-
-<br>
-<ul>
-	{% for item in collection %}
-	<li>{{ item.list_name }}</li>
-	<li>{{ item.brand_name }}</li>
-	<li>{{ item.product_type }}</li>
-    <li>{{ item.item_description }}</li>
-	<li>{{ item.item_price }}</li>
-	<li>{{ item.need_rating }}</li>
-	<a href="{{ url_for('edititem', item_id=item._id) }}">Edit Item Button</a>
-	<a href="{{ url_for('deleteitem', item_id=item._id) }}">Delete Item Button</a>
-	<br>
-{% endfor %}
-
-<a href="{{ url_for('additem') }}">Add item +</a>
-</ul>
+<div class="container-fluid full-width">
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			<h1>List Items</h1>
+			<p>List name (with edit and delete button)</p>
+			<p>Filter by:</p>
+		</div>
+		<div class="col-12">
+			<ul>
+				{% for item in collection %}
+				<li>{{ item.list_name }}</li>
+				<li>{{ item.brand_name }}</li>
+				<li>{{ item.product_type }}</li>
+				<li>{{ item.item_description }}</li>
+				<li>{{ item.item_price }}</li>
+				<li>{{ item.need_rating }}</li>
+				<a href="{{ url_for('edititem', item_id=item._id) }}">Edit Item Button</a>
+				<a href="{{ url_for('deleteitem', item_id=item._id) }}">Delete Item Button</a>
+				<br>
+            {% endfor %}
+            </ul>
+		</div>
+		<div class="col-12">
+			<a href="{{ url_for('additem') }}">Add item +</a>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
