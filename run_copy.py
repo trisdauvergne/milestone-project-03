@@ -95,10 +95,6 @@ def listitems():
     return render_template('listitems.html',
     collection=mongo.db.wt_listitems.find())
 
-# @app.route("/sorteditems")
-# def sorteditems():
-#     return render_template('listitems.html',
-#     collection=request.args['listname'])
 
 # Function to add a new item to a list
 @app.route("/additem", methods=["GET", "POST"])
@@ -168,6 +164,34 @@ def deleteitem(item_id):
     mongo.db.wt_listitems.remove({'_id': ObjectId(item_id)})
 
     return redirect(url_for('listitems'))
+
+
+# Functions to filter items in a list
+@app.route("/sortby/<stype>", methods=["GET"])
+def sortby(stype):
+    allitems = list(mongo.db.wt_listitems.find())
+    _list = []
+    for item in allitems:
+        if item['list_name'] == 'Mums birthday':
+            item['int_price'] = int(item['item_price'])
+            _list.append(item)
+    _key = ''
+    if stype == 'price':
+        _key = 'int_price'
+    elif stype == 'brand':
+        _key = 'brand_name'
+    _list.sort(key=operator.itemgetter(_key))
+
+    return redirect(url_for("listitems",
+                             listname=_list))
+
+@app.route("/filterbybrand")
+
+@app.route("/filterbyproducttype")
+
+@app.route("/filterbyprice")
+
+@app.route("/filterbyrating")
 
 
 # Test to check data can be sent to database
