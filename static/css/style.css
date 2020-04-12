@@ -30,7 +30,7 @@ a {
 
 /* Mylists Page */
 .mylist-container {
-    border-bottom: 5px solid black;
+    border-bottom: 4px solid black;
     font-size: 25px;
     font-weight: 400;
     padding-top: 16px;
@@ -50,10 +50,14 @@ a {
     padding-top: 16px;
 }
 
+.image-placeholder {
+    width: 20%;
+}
+
 /* Navbar elements for bootstrap  */
 .navbar {
     color: black;
-    border-bottom: 5px solid black;
+    border-bottom: 4px solid black;
 }
 
 .sticky {
@@ -79,7 +83,6 @@ a {
 .navbar-container {
     display: inline-block;
 }
-
 
 
 

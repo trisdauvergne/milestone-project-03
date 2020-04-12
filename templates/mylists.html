@@ -5,14 +5,14 @@
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
 		<div class="col-12">
-			{% for name in collection %}
-			<div class="mylist-container">
-				<a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
-				<p class="padding-top">No of items (link to count function)</p>
-				<a href="{{ url_for('editlist', list_id=name._id) }}" class="grey-button">Edit List</a>
-				<a href="{{ url_for('deletelist', list_id=name._id) }}" class="grey-button left-padding">Delete List</a>
-			</div>
-			{% endfor %}
+            {% for name in collection %}
+            <div class="mylist-container">
+                <a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
+                <p class="padding-top">No of items (link to count function)</p>
+                <a href="{{ url_for('editlist', list_id=name._id) }}" class="grey-button">Edit List</a>
+                <a href="{{ url_for('deletelist', list_id=name._id) }}" class="grey-button left-padding">Delete List</a>
+            </div>
+            {% endfor %}
 		</div>
 		<div class="col-12">
 			<a href="{{ url_for('newlist') }}">Start a new list</a>
