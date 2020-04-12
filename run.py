@@ -1,6 +1,7 @@
 import os
 import operator
 import requests
+import urllib.request
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
@@ -185,6 +186,14 @@ def create():
 
     return render_template('create.html', document=new_list_item)
 
+
+url = "http://en.wikipedia.org"
+r = requests.get(url)
+html_content = r.text
+
+soup = BeautifulSoup(html_content, "html.parser")
+
+print(soup.find_all('img'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
