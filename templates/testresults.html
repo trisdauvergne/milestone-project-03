@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>TEST RESULTS PAGE</h1>
+
+<ul>
+	{% for items in results %}
+	<li>
+		<p>{{ results.list_name }}</p>
+		<p>{{ results.brand_name }}</p>
+		<p>{{ results.product_type }}</p>
+		<p>{{ results.item_description }}</p>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

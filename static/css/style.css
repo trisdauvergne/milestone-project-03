@@ -5,6 +5,10 @@ body {
     font-family: 'Heebo', sans-serif !important;
 }
 
+a {
+    color: black !important;
+}
+
 .general-margin {
     margin: 0 2%;
 }
@@ -22,6 +26,28 @@ body {
 
 .row.row-no-gutter [class*="col-"] {
     padding: 0
+}
+
+/* Mylists Page */
+.mylist-container {
+    border-bottom: 5px solid black;
+    font-size: 25px;
+    font-weight: 400;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 50%;
+}
+
+.grey-button {
+    color: grey !important;
+}
+
+.left-padding {
+    padding-left: 30px;
+}
+
+.padding-top {
+    padding-top: 16px;
 }
 
 /* Navbar elements for bootstrap  */

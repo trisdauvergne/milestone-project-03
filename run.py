@@ -98,6 +98,7 @@ def listitems():
     return render_template('listitems.html',
     collection=mongo.db.wt_listitems.find())
 
+
 # @app.route("/sorteditems")
 # def sorteditems():
 #     return render_template('listitems.html',
@@ -187,13 +188,35 @@ def create():
     return render_template('create.html', document=new_list_item)
 
 
-url = "http://en.wikipedia.org"
-r = requests.get(url)
-html_content = r.text
+# url = "http://en.wikipedia.org"
+# r = requests.get(url)
+# html_content = r.text
 
-soup = BeautifulSoup(html_content, "html.parser")
+# soup = BeautifulSoup(html_content, "html.parser")
 
-print(soup.find_all('img'))
+# print(soup.find_all('img'))
+
+@app.route("/mumsbirthday")
+def mumsbirthday():
+    # results = itemcoll.find({'list_name': 'Mums birthday'})
+
+    # return render_template('testresults.html', results=results)
+
+    for items in itemcoll.find({'list_name':'Mums birthday'}):
+        return render_template('testresults.html',
+                                results=items)
+
+
+# To check query is correct
+for items in itemcoll.find({'list_name': 'Mums birthday'}):
+    print(items)
+
+# How many documents use count_documents    
+print(itemcoll.count_documents({}))
+
+print(itemcoll.count_documents({'list_name': 'Mums birthday'}))
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
