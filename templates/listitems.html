@@ -3,33 +3,34 @@
 {% block content %}
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
+		<div class="col-12 mylist-container"> 
+            <!-- <div class="col padding-left"> -->
+                <p class="list-filter-styling">Filter by: <a href="" class="grey-button">Brand, </a><a href="" class="grey-button">Price, </a><a href="" class="grey-button">Urgency</a></p>
+            <!-- </div> -->
+        </div>
+	</div>
 
-		<div class="col-12 general-margin">
-			<h1>List Items</h1>
-			<p>List name (with edit and delete button)</p>
-			<p>Filter by:</p>
-		</div>
-
-		<div class="col-12 general-margin">
-			<ul>
-				{% for item in collection %}
-				<li>{{ item.list_name }}</li>
-				<li>{{ item.brand_name }}</li>
-				<li>{{ item.product_type }}</li>
-				<li>{{ item.item_description }}</li>
-				<li>{{ item.item_price }}</li>
-				<li>{{ item.need_rating }}</li>
-				<a href="{{ url_for('edititem', item_id=item._id) }}">Edit Item Button</a>
-				<a href="{{ url_for('deleteitem', item_id=item._id) }}">Delete Item Button</a>
-				<br>
-            {% endfor %}
-            </ul>
-		</div>
-
-		<div class="col-12 general-margin">
-			<a href="{{ url_for('additem') }}">Add item +</a>
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			{% for item in collection %}
+			<div class="mylist-container">
+				<a href="">{{ item.list_name }}</a>
+				<p class="padding-top">{{ item.brand_name }}</p>
+				<p>{{ item.product_type }}</p>
+				<p>{{ item.item_description }}</p>
+				<p>{{ item.item_price }}</p>
+				<p>{{ item.need_rating }}</p>
+				<a href="{{ url_for('edititem', item_id=item._id) }}" class="grey-button">Edit Item</a>
+				<a href="{{ url_for('deleteitem', item_id=item._id) }}" class="grey-button left-padding">Delete Item</a>
+			</div>
+			{% endfor %}
 		</div>
 	</div>
+
+	<div class="col-12 general-margin">
+		<a href="{{ url_for('additem') }}">Add item +</a>
+	</div>
+</div>
 </div>
 
 {% endblock %}

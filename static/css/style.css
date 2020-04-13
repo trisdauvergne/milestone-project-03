@@ -13,6 +13,18 @@ a {
     margin: 0 2%;
 }
 
+.grey-button {
+    color: grey !important;
+}
+
+.left-padding {
+    padding-left: 30px;
+}
+
+.padding-top {
+    padding-top: 16px;
+}
+
 /* To make the divs go edge to edge */
 .container-fluid.full-width {
     padding-left: 0;
@@ -38,21 +50,13 @@ a {
     padding-left: 50%;
 }
 
-.grey-button {
-    color: grey !important;
-}
-
-.left-padding {
-    padding-left: 30px;
-}
-
-.padding-top {
+/* List Items Page */
+.list-filter-styling {
+    padding-left: 50%;
     padding-top: 16px;
+    font-size: 20px;
 }
 
-.image-placeholder {
-    width: 20%;
-}
 
 /* Navbar elements for bootstrap  */
 .navbar {
