@@ -57,8 +57,8 @@ a {
     font-size: 20px;
 }
 
-/* New list page */
-.newlist-form-padding {
+/* Form additional padding on newlist and add items pages */
+.form-left-padding {
     padding-left: 16px;
 }
 
