@@ -20,8 +20,8 @@
 			{% for item in collection %}
 			<div class="mylist-container">
 				<a href="" class="list-name">{{ item.list_name }}</a>
-				<p class="padding-top">{{ item.brand_name }}</p>
-				<p>{{ item.product_type }}</p>
+				<p class="padding-top">{{ item.brand_name }} {{ item.product_type }}</p>
+				<!-- <p>{{ item.product_type }}</p> -->
 				<p>{{ item.item_description }}</p>
 				<p>{{ item.item_price }}</p>
 				<p>{{ item.need_rating }}</p>
