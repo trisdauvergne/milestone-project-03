@@ -4,8 +4,14 @@
 
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
+		<div class="col-12 mylist-container"> 
+            <p class="header-row">My lists</p>
+        </div>
+	</div>
+
+    <div class="row row-no-gutter">
 		<div class="col-12 mylist-container">
-			<p class="list-filter-styling">Filter by: <a href="" class="grey-button">Name, </a><a href="" class="grey-button">No of items</a></p>
+			<p class="list-filter-styling">Filter by: <a href="" class="filter-button-1">Name, </a><a href="" class="filter-button-2 left-padding">No of items</a></p>
 		</div>
 	</div>
 	<div class="row row-no-gutter">
@@ -14,8 +20,8 @@
 			<div class="mylist-container">
 				<a href="{{ url_for('listitems') }}">{{ name.list_name }}</a>
 				<p class="padding-top">No of items (link to count function)</p>
-				<a href="{{ url_for('editlist', list_id=name._id) }}" class="grey-button">Edit List</a>
-				<a href="{{ url_for('deletelist', list_id=name._id) }}" class="grey-button left-padding">Delete List</a>
+				<a href="{{ url_for('editlist', list_id=name._id) }}" class="edit-button">Edit list,</a>
+				<a href="{{ url_for('deletelist', list_id=name._id) }}" class="delete-button left-padding">Delete List</a>
 			</div>
 			{% endfor %}
 		</div>

@@ -4,6 +4,12 @@
 
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
+		<div class="col-12 mylist-container"> 
+            <p class="header-row">Make a new list</p>
+        </div>
+	</div>
+
+    <div class="row row-no-gutter">
 		<div class="col-12">
             <div class="row mylist-container">       
                 <form action="{{ url_for('newlist')}}" method="POST" class="form-left-padding">
@@ -24,7 +30,7 @@
                         <label for="exampleFormControlInput1">List description (optional)</label>
                         <input type="text" class="form-control" id="list_description" name="list_description" placeholder="List Description">
                     </div>
-                    <button type="submit" class="btn btn-primary">Create List</button>
+                    <button type="submit" class="custom-button">Create List</button>
                 </form>
             </div>
 		</div>

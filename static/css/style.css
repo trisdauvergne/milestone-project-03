@@ -1,28 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 /* General */
 body {
-    font-family: 'Heebo', sans-serif !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
 }
 
 a {
     color: black !important;
+    text-decoration: none !important;
 }
 
 .general-margin {
     margin: 0 2%;
 }
 
-.grey-button {
-    color: grey !important;
+input {
+    border-radius: 0px !important;
 }
 
+/* Left padding between edit button and delete button */
 .left-padding {
-    padding-left: 30px;
+    margin-left: 30px;
+}
+
+.left-padding-sm {
+    margin-left: 20px;
 }
 
 .padding-top {
     padding-top: 16px;
+}
+
+.custom-button {
+    background-color: purple;
 }
 
 /* To make the divs go edge to edge */
@@ -33,28 +44,34 @@ a {
 }
 
 .row.row-no-gutter {
-    margin: 0
+    margin: 0;
 }
 
 .row.row-no-gutter [class*="col-"] {
-    padding: 0
+    padding: 0;
 }
 
 /* Mylists Page */
 .mylist-container {
     border-bottom: 4px solid black;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: 50%;
+    padding-left: 33%;
 }
 
 /* List Items Page */
 .list-filter-styling {
-    padding-left: 50%;
+    padding-left: 33%;
     padding-top: 16px;
     font-size: 20px;
+}
+
+/* Header Row */
+.header-row {
+    padding-left: 33%;
+    padding-top: 16px;
 }
 
 /* Form additional padding on newlist and add items pages */
@@ -79,12 +96,12 @@ a {
 .navbar-logo {
     color:black;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .nav-link {
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
     color: black !important;
     padding-left: 0px !important;
 }
@@ -93,8 +110,69 @@ a {
     display: inline-block;
 }
 
+/* Hover and active colours */
 
+.navbar-logo:hover {
+    background-color: #f5489a;
+    padding: 2px;
+}
 
+.navbar-logo:active {
+    background-color: #f5489a;
+    padding: 2px;
+    color: white !important;
+}
+
+.mylists-link:hover {
+    background-color: #feeb2b;
+}
+
+.mylists-link:active {
+    background-color: #feeb2b;
+    color: white !important;
+}
+
+.createlist-link:hover {
+    background-color: #fdb8d4;
+}
+
+.createlist-link:active {
+    background-color: #fdb8d4;
+    color: white !important;
+}
+
+.additem-link:hover {
+    background-color: #01a1e3;
+}
+
+.additem-link:active {
+    background-color: #01a1e3;
+    color: white !important;
+}
+
+.edit-button:hover {
+    background-color: #6cb456;
+}
+
+.delete-button:hover {
+    background-color: #fa5453;
+}
+
+.filter-button-1:hover {
+    background-color: #af79cd;
+}
+
+.filter-button-2:hover {
+    background-color: #6cb456;
+}
+
+.filter-button-3:hover {
+    background-color: #feeb2b;
+}
+
+.list-name:hover {
+    background-color: #f5489a;
+}
 
 /* Responsive navbar from W3 Schools */
 
