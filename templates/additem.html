@@ -18,7 +18,8 @@
                     <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
                     <select class="form-control" id="list_name" name="list_name">
                         {% for name in list %}
-                            <option value="{{ name.list_name }}">{{ name.list_name }}</option>
+                            <option value="{{ name.list_name }}">
+                            {{ name.list_name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -60,7 +61,7 @@
                         <option>ASAP!</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Item</button>
+                <button type="submit" class="custom-button">Add Item</button>
                 </form>
 			</div>
 		</div>

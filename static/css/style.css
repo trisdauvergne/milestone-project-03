@@ -33,7 +33,9 @@ input {
 }
 
 .custom-button {
-    background-color: purple;
+    border: 4px solid black;
+    font-weight: 500;
+    font-size: 25px;
 }
 
 /* To make the divs go edge to edge */
@@ -83,6 +85,7 @@ input {
 .navbar {
     color: black;
     border-bottom: 4px solid black;
+    padding-left: 0px !important;
 }
 
 .sticky {
@@ -97,6 +100,7 @@ input {
     color:black;
     font-size: 25px;
     font-weight: 500;
+    padding-left: 5%;
 }
 
 .nav-link {
