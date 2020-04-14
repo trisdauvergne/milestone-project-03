@@ -14,12 +14,12 @@
             <div class="row mylist-container">
                 <form action="{{ url_for('editlist', list_id=list_info._id)}}" method="POST" class="form-left-padding">
                     <div class="form-group">
-                        <label for="formGroupExampleInput">List name (required)</label>
-                        <input type="text" class="form-control" id="list_name" placeholder="Example input" name="list_name">
+                        <label for="formGroupExampleInput">List name</label>
+                        <input type="text" class="form-control" id="list_name" placeholder="" name="list_name" value="{{ list_info.list_name }}">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">List category (required)</label>
-                        <select class="form-control" id="list_category" name="list_category">
+                        <select class="form-control" id="list_category" name="list_category" placeholder="{{ list_info.list_category }}">
                         <option>Super important urgent need need need</option>
                         <option>Gifts (not for me sadly)</option>
                         <option>Wish list</option>
@@ -27,8 +27,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">List description (optional)</label>
-                        <input type="text" class="form-control" id="list_description" name="list_description" placeholder="List Description">
+                        <label for="exampleFormControlInput1">List description</label>
+                        <input type="text" class="form-control" id="list_description" name="list_description" placeholder="" value="{{ list_info.list_description }}">
                     </div>
                     <button type="submit" class="custom-button">Edit List</button>
                 </form>

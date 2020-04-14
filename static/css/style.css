@@ -23,6 +23,10 @@ input {
     border-radius: 0px !important;
 }
 
+.fix-asap {
+    background-color: red;
+    color: white;
+}
 /* Left padding between edit button and delete button */
 .left-padding {
     margin-left: 30px;

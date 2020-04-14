@@ -56,7 +56,8 @@ def newlist():
 
         newly_added_list = {'list_name': list_name,
                             'list_category': list_category,
-                            'list_description': list_description}
+                            'list_description': list_description,
+                            'items': []}
 
         listcoll.insert_one(newly_added_list)
 
@@ -66,7 +67,7 @@ def newlist():
 # Function to edit a list
 @app.route("/editlist/<list_id>", methods=["GET", "POST"])
 def editlist(list_id):
-    _lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
+    lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -77,12 +78,12 @@ def editlist(list_id):
                         'list_category': list_category,
                         'list_description': list_description}
 
-        mongo.db.wt_collection.update({'_id': ObjectId(item_id)}, updated_item)
+        mongo.db.wt_collection.update({'_id': ObjectId(list_id)}, updated_list)
 
         return redirect(url_for('mylists'))
 
     return render_template('editlist.html',
-                            list_info=_lists)
+                            list_info=lists)
 
 
 @app.route("/deletelist/<list_id>")
@@ -99,19 +100,11 @@ def listitems():
     collection=mongo.db.wt_listitems.find())
 
 
-# @app.route("/sorteditems")
-# def sorteditems():
-#     return render_template('listitems.html',
-#     collection=request.args['listname'])
-
-
 # Function to add a new item to a list
-@app.route("/additem", methods=["GET", "POST"])
-def additem():
-
-    if request.method == 'GET':
-        return render_template('additem.html',
-               list_names=mongo.db.wt_collection.find())
+@app.route("/additem/<list_id>", methods=["GET", "POST"])
+def additem(list_id):
+    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    print(list_items)
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -122,20 +115,27 @@ def additem():
         item_price = request.form['item_price']
         need_rating = request.form['need_rating']
 
-        newly_added_item = {'list_name': list_name,
-                            'item': [{
-                                'product_link': product_link,
-                                'brand_name': brand_name,
-                                'product_type': product_type,
-                                'item_description': item_description,
-                                'item_price': item_price,
-                                'need_rating': need_rating
-                                }]
-                            }
+        newly_added_item = {'product_link': product_link,
+                            'brand_name': brand_name,
+                            'product_type': product_type,
+                            'item_description': item_description,
+                            'item_price': item_price,
+                            'need_rating': need_rating}
 
-        itemcoll.insert_one(newly_added_item)
+        # Get the list from the list items (check how to get the document as a dictionary Google & MongoDB)
+        item_update = list_items.items
 
-    return redirect(url_for('listitems'))
+        # Append the newly added item to that list
+        item_update.append(newly_added_item)
+        
+        # Update the list on the document (check the update documentation on MongoDB to see how it works)
+           
+        itemcoll.append({'_id': ObjectId(list_id)}, newly_added_item)
+        
+        # return redirect(url_for('mylists'))
+        
+    return render_template('additem.html',
+                            list_items=list_items)
 
 
 # Function to edit an item in a list
@@ -230,7 +230,6 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
 print(listcoll.count_documents({}))
 
 print(itemcoll.count_documents({'brand_name': 'COS'}))
-
 
 
 if __name__ == '__main__':
