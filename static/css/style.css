@@ -15,6 +15,10 @@ a {
     margin: 0 2%;
 }
 
+.hidden-id {
+    display: none;
+}
+
 input {
     border-radius: 0px !important;
 }
@@ -36,6 +40,8 @@ input {
     border: 4px solid black;
     font-weight: 500;
     font-size: 25px;
+    background-color: white;
+    margin: 16px 0;
 }
 
 /* To make the divs go edge to edge */
@@ -100,7 +106,7 @@ input {
     color:black;
     font-size: 25px;
     font-weight: 500;
-    padding-left: 5%;
+    margin-left: 5%;
 }
 
 .nav-link {
@@ -118,12 +124,12 @@ input {
 
 .navbar-logo:hover {
     background-color: #f5489a;
-    padding: 2px;
+    /* padding: 2px; */
 }
 
 .navbar-logo:active {
     background-color: #f5489a;
-    padding: 2px;
+    /* padding: 2px; */
     color: white !important;
 }
 
@@ -145,7 +151,7 @@ input {
     color: white !important;
 }
 
-.additem-link:hover {
+.additem-link:hover, .add-item:hover {
     background-color: #01a1e3;
 }
 
@@ -176,6 +182,10 @@ input {
 
 .list-name:hover {
     background-color:#fdb8d4;
+}
+
+.custom-button:hover {
+    background-color: #6cb456;
 }
 
 /* Responsive navbar from W3 Schools */

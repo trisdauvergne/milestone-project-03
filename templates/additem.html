@@ -17,9 +17,11 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
                     <select class="form-control" id="list_name" name="list_name">
-                        {% for name in list %}
+                        {% for name in list_names %}
                             <option value="{{ name.list_name }}">
                             {{ name.list_name }}</option>
+                            <option value="{{ name._id }}" class="hidden-id">
+                            {{ name._id }}</option>
                         {% endfor %}
                     </select>
                 </div>

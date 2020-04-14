@@ -111,7 +111,7 @@ def additem():
 
     if request.method == 'GET':
         return render_template('additem.html',
-        list=mongo.db.wt_collection.find())
+               list_names=mongo.db.wt_collection.find())
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -123,12 +123,15 @@ def additem():
         need_rating = request.form['need_rating']
 
         newly_added_item = {'list_name': list_name,
-                            'product_link': product_link,
-                            'brand_name': brand_name,
-                            'product_type': product_type,
-                            'item_description': item_description,
-                            'item_price': item_price,
-                            'need_rating': need_rating}
+                            'item': [{
+                                'product_link': product_link,
+                                'brand_name': brand_name,
+                                'product_type': product_type,
+                                'item_description': item_description,
+                                'item_price': item_price,
+                                'need_rating': need_rating
+                                }]
+                            }
 
         itemcoll.insert_one(newly_added_item)
 
@@ -178,10 +181,21 @@ def deleteitem(item_id):
 # Test to check data can be sent to database
 @app.route("/create")
 def create():
-    new_list_item = {'brand': 'COS',
-                     'type': 'Shirt',
-                     'price': '250SEK',
-                     'description': 'White oversized t-shirt'}
+    # new_list_item = {'brand': 'COS',
+    #                  'type': 'Shirt',
+    #                  'price': '250SEK',
+    #                  'description': 'White oversized t-shirt'}
+
+    # mongo.db.wt_listitems.insert_one(new_list_item)
+
+    new_list_item = {'list_name': 'May clothes',
+                     'list_description': 'Clothes I want to buy next month',
+                     'list_item': [{
+                         'type': 'shirt',
+                         'brand': 'COS',
+                         'price': '250'
+                     }]
+                     }
 
     mongo.db.wt_listitems.insert_one(new_list_item)
 
@@ -195,6 +209,7 @@ def create():
 # soup = BeautifulSoup(html_content, "html.parser")
 
 # print(soup.find_all('img'))
+
 
 @app.route("/mumsbirthday")
 def mumsbirthday():
@@ -212,9 +227,9 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
     print(items)
 
 # How many documents use count_documents    
-print(itemcoll.count_documents({}))
+print(listcoll.count_documents({}))
 
-print(itemcoll.count_documents({'list_name': 'Mums birthday'}))
+print(itemcoll.count_documents({'brand_name': 'COS'}))
 
 
 

@@ -4,25 +4,28 @@
 
 <div class="container-fluid full-width">
 	<div class="row row-no-gutter">
-		<div class="col-12">
-			<h1> Edit Item </h1>
+		<div class="col-12 mylist-container">
+			<p class="header-row"> Edit Item </p>
 		</div>
-        <div class="col-12">
+	</div>
 
-		<form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST">
-			<div class="form-group">
-				<label for="exampleFormControlSelect1">List name (to be a preset value)</label>
-				<select class="form-control" id="list_name" name="list_name">
-            <option value="{{ item_info.list_name }}">{{ item_info.list_name }}</option>
-            {% for name in list %}
-                <option value="{{ name.list_name }}">{{ name.list_name }}</option>
-            {% endfor %}
-        </select>
-			</div>
-			<div class="form-group">
-				<label for="formGroupExampleInput">Link to product (required)</label>
-				<input type="text" class="form-control" id="product_link" value="{{ item_info.product_link}}" name="product_link">
-    </div>
+    <div class="row row-no-gutter"></div>
+        <div class="col-12">
+            <div class="row mylist-container">
+                <form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST" class="form-left-padding">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
+                        <select class="form-control" id="list_name" name="list_name">
+                    <option value="{{ item_info.list_name }}">{{ item_info.list_name }}</option>
+                    {% for name in list %}
+                        <option value="{{ name.list_name }}">{{ name.list_name }}</option>
+                    {% endfor %}
+                </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Link to product (required)</label>
+                        <input type="text" class="form-control" id="product_link" value="{{ item_info.product_link}}" name="product_link">
+            </div>
 				<div class="form-group">
 					<label for="formGroupExampleInput">Brand (required)</label>
 					<input type="text" class="form-control" id="brand_name" value="{{ item_info.brand_name }}" name="brand_name">
@@ -59,9 +62,10 @@
         <option>ASAP!</option>
         </select>
 							</div>
-							<button type="submit" class="btn btn-primary">Update Item</button>
+							<button type="submit" class="custom-button">Update Item</button>
 		</form>
 	</div>
+</div>
 </div>
 
 {% endblock %}
