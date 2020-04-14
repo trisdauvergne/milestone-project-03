@@ -61,7 +61,7 @@ def newlist():
 
         listcoll.insert_one(newly_added_list)
 
-    return redirect(url_for('additem'))
+    return redirect(url_for('mylists'))
 
 
 # Function to edit a list
@@ -104,6 +104,8 @@ def listitems():
 @app.route("/additem/<list_id>", methods=["GET", "POST"])
 def additem(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+
+    location_for_append = list_items.items
     print(list_items)
 
     if request.method == 'POST':
@@ -115,24 +117,16 @@ def additem(list_id):
         item_price = request.form['item_price']
         need_rating = request.form['need_rating']
 
-        newly_added_item = {'product_link': product_link,
-                            'brand_name': brand_name,
-                            'product_type': product_type,
-                            'item_description': item_description,
-                            'item_price': item_price,
-                            'need_rating': need_rating}
+        appended_item = {'product_link': product_link,
+                         'brand_name': brand_name,
+                         'product_type': product_type,
+                         'item_description': item_description,
+                         'item_price': item_price,
+                         'need_rating': need_rating}
 
-        # Get the list from the list items (check how to get the document as a dictionary Google & MongoDB)
-        item_update = list_items.items
+        listcoll.update_one({'_id': ObjectId(list_id)}, {'$push': {'items':appended_item}})
 
-        # Append the newly added item to that list
-        item_update.append(newly_added_item)
-        
-        # Update the list on the document (check the update documentation on MongoDB to see how it works)
-           
-        itemcoll.append({'_id': ObjectId(list_id)}, newly_added_item)
-        
-        # return redirect(url_for('mylists'))
+        return redirect(url_for('mylists'))
         
     return render_template('additem.html',
                             list_items=list_items)
