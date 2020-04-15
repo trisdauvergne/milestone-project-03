@@ -96,8 +96,11 @@ def deletelist(list_id):
 # Function to view all items in a list
 @app.route("/listitems")
 def listitems():
+    array_items = mongo.db.wt_collection.find()
+    print(array_items)
+
     return render_template('listitems.html',
-    collection=mongo.db.wt_listitems.find())
+    collection=mongo.db.wt_listcoll.items.find())
 
 
 # Function to add a new item to a list
@@ -224,7 +227,6 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
 print(listcoll.count_documents({}))
 
 print(itemcoll.count_documents({'brand_name': 'COS'}))
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

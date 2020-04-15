@@ -8,8 +8,17 @@
     {% for name in collection %}
         <li>
             <p>{{ name.list_name }}</p>
-            <p>{{ name.description }}</p>
+            <p>{{ name.list_description }}</p>
+            <ul>
+            {% for item in name['items'] %}
+            <li>
+                <p>{{ item.brand_name }}</p>
+                <p>{{ item.product_type }}</p>
+            </li>
+            {% endfor %}
+            </ul>
         </li>
+        
     {% endfor %}
     </ul>
 
