@@ -96,11 +96,8 @@ def deletelist(list_id):
 # Function to view all items in a list
 @app.route("/listitems")
 def listitems():
-    array_items = mongo.db.wt_collection.find()
-    print(array_items)
-
     return render_template('listitems.html',
-    collection=mongo.db.wt_listcoll.items.find())
+    collection=mongo.db.wt_collection.find())
 
 
 # Function to add a new item to a list
