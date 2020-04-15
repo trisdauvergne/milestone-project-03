@@ -63,6 +63,31 @@ input {
     padding: 0;
 }
 
+/* Welcome Page */
+
+.homepage-top-left {
+    height: 30vh;
+    /* border-right: solid black 4px; */
+    border-bottom: solid black 4px;
+}
+
+.homepage-top-right {
+    background-color: red;
+    height: 70vh;
+    border-left: solid black 4px;
+}
+
+.homepage-bottom-right {
+    height: 30vh;
+    border-top: solid black 4px;
+    border-left: solid black 4px;
+}
+
+.homepage-bottom-left {
+    background-color: red;
+    height: 70vh;
+}
+
 /* Mylists Page */
 .mylist-container {
     border-bottom: 4px solid black;

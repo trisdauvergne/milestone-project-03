@@ -138,8 +138,8 @@ def additem(list_id):
 # Function to edit an item in a list
 @app.route("/edititem/<item_id>", methods=["GET", "POST"])
 def edititem(item_id):
-    _item = mongo.db.wt_listitems.find_one({'_id': ObjectId(item_id)})
-    print(_item)
+    item_location = listcoll['items': {}].find_one({'_id': ObjectId(item_id)})
+    print(item_location)
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -158,12 +158,12 @@ def edititem(item_id):
                         'item_price': item_price,
                         'need_rating': need_rating}
 
-        mongo.db.wt_listitems.update({'_id': ObjectId(item_id)}, updated_item)
+        mongo.db.wt_collection['items'].update({'_id': ObjectId(item_id)}, updated_item)
 
-        return redirect(url_for('listitems'))
+        return redirect(url_for('itemadded'))
 
     return render_template('edititem.html', 
-                            item_info=_item, 
+                            item_info=item_location, 
                             list=mongo.db.wt_collection.find())
 
 
@@ -199,15 +199,6 @@ def create():
     return render_template('create.html', document=new_list_item)
 
 
-# url = "http://en.wikipedia.org"
-# r = requests.get(url)
-# html_content = r.text
-
-# soup = BeautifulSoup(html_content, "html.parser")
-
-# print(soup.find_all('img'))
-
-
 @app.route("/mumsbirthday")
 def mumsbirthday():
     # results = itemcoll.find({'list_name': 'Mums birthday'})
@@ -227,6 +218,7 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
 print(listcoll.count_documents({}))
 
 print(listcoll.count_documents({'list_name': 'Holiday gear'}))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

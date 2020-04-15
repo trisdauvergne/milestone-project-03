@@ -20,7 +20,6 @@
 			<div class="mylist-container">
 				<a href="{{ url_for('listitems', list_id=name._id) }}" class="list-name">{{ name.list_name }}</a>
                 <p class="padding-top">{{ name.list_description }}</p>
-                <p class="fix-asap">Number of items</p>
                 <a href="{{ url_for('additem', list_id=name._id) }}" class="add-item">Add to this list,</a>
 				<a href="{{ url_for('editlist', list_id=name._id) }}" class="edit-button left-padding">Edit list,</a>
 				<a href="{{ url_for('deletelist', list_id=name._id) }}" class="delete-button left-padding">Delete List</a>
