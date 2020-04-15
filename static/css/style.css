@@ -233,6 +233,10 @@ input {
     background-color:#01a1e3;
 }
 
+.add-to-list:hover {
+    background-color:#01a1e3;
+}
+
 /* Responsive navbar from W3 Schools */
 
 /* .topnav {

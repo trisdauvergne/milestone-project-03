@@ -76,7 +76,8 @@ def editlist(list_id):
 
         updated_list = {'list_name': list_name,
                         'list_category': list_category,
-                        'list_description': list_description}
+                        'list_description': list_description,
+                        'items': []}
 
         mongo.db.wt_collection.update({'_id': ObjectId(list_id)}, updated_list)
 
@@ -135,36 +136,46 @@ def additem(list_id):
                             list_items=list_items)
 
 
-# Function to edit an item in a list
-@app.route("/edititem/<item_id>", methods=["GET", "POST"])
-def edititem(item_id):
-    item_location = listcoll['items': {}].find_one({'_id': ObjectId(item_id)})
-    print(item_location)
+@app.route("/edititem/<list_id>/<item_id>", methods=["GET", "POST"])
+def edititem(list_id, item_id):
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
 
-    if request.method == 'POST':
-        list_name = request.form['list_name']
-        product_link = request.form['product_link']
-        brand_name = request.form['brand_name']
-        product_type = request.form['product_type']
-        item_description = request.form['item_description']
-        item_price = request.form['item_price']
-        need_rating = request.form['need_rating']
+    for item in _list['items']:
+        print(item['_id'], item_id)
 
-        updated_item = {'list_name': list_name,
+        if str(item['_id']) == str(item_id):
+            print('hello')
+            if request.method == 'POST':
+                list_name = request.form['list_name']
+                product_link = request.form['product_link']
+                brand_name = request.form['brand_name']
+                product_type = request.form['product_type']
+                item_description = request.form['item_description']
+                item_price = request.form['item_price']
+                need_rating = request.form['need_rating']
+
+                item = {'list_name': list_name,
                         'product_link': product_link,
                         'brand_name': brand_name,
                         'product_type': product_type,
                         'item_description': item_description,
                         'item_price': item_price,
                         'need_rating': need_rating}
+                print(brand_name)
+                print(item)
 
-        mongo.db.wt_collection['items'].update({'_id': ObjectId(item_id)}, updated_item)
+                mongo.db.wt_collection.update({'_id': ObjectId(item_id)}, {'$set': {'items': item}})
 
-        return redirect(url_for('itemadded'))
+                return redirect(url_for('itemadded'))
 
-    return render_template('edititem.html', 
-                            item_info=item_location, 
-                            list=mongo.db.wt_collection.find())
+            return render_template('edititem.html', 
+                                    item_info=item, 
+                                    list=_list)
+
+
+@app.route("/itemadded")
+def itemadded():
+    return render_template('itemadded.html')
 
 
 # Function to delete an item from a list

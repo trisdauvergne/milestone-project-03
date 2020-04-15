@@ -8,11 +8,11 @@
 			<p class="header-row"> Edit Item </p>
 		</div>
 	</div>
-<p>{{ item_info }}</p>
+<p>{{ item_info.item_name }}</p>
     <div class="row row-no-gutter"></div>
         <div class="col-12">
             <div class="row mylist-container">
-                <form action="{{ url_for('edititem', item_id=item_info._id) }}" method="POST" class="form-left-padding">
+                <form action="{{ url_for('edititem', list_id=list._id, item_id=item_info._id) }}" method="POST" class="form-left-padding">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">List name (to be a preset value)</label>
                         <select class="form-control" id="list_name" name="list_name">
