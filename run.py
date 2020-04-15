@@ -97,7 +97,6 @@ def deletelist(list_id):
 @app.route("/listitems/<list_id>")
 def listitems(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
-    print(list_items)
     
     return render_template('listitems.html',
                             list_items=list_items)
@@ -120,7 +119,8 @@ def additem(list_id):
         item_price = request.form['item_price']
         need_rating = request.form['need_rating']
 
-        appended_item = {'product_link': product_link,
+        appended_item = {'_id': ObjectId(),
+                         'product_link': product_link,
                          'brand_name': brand_name,
                          'product_type': product_type,
                          'item_description': item_description,
@@ -226,7 +226,7 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
 # How many documents use count_documents    
 print(listcoll.count_documents({}))
 
-print(itemcoll.count_documents({'brand_name': 'COS'}))
+print(listcoll.count_documents({'list_name': 'Holiday gear'}))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

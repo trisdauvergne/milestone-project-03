@@ -26,7 +26,7 @@
                 <div class="col-12 list-items">
                     {% for item in list_items['items'] %}
                     <div class="col-12 listitems-left-padding">
-                        <a href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
+                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }}</p>
                         <p>{{ item.need_rating }}</p>
