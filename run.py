@@ -164,7 +164,9 @@ def edititem(list_id, item_id):
                 print(brand_name)
                 print(item)
 
-                mongo.db.wt_collection.update({'_id': ObjectId(item_id)}, {'$set': {'items': item}})
+                mongo.db.wt_collection.update_one(
+                    {"_id": ObjectId(item_id)},
+                    {"$set": {"items.1.content": item}})
 
                 return redirect(url_for('itemadded'))
 
