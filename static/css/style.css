@@ -74,7 +74,14 @@ input {
 .homepage-top-right {
     background-color: red;
     height: 70vh;
+    width: 50vw;
     border-left: solid black 4px;
+}
+
+.top-right-picture {
+    width: 50vw;
+    height: 70vh;
+    object-fit: cover;
 }
 
 .homepage-bottom-right {
@@ -86,6 +93,13 @@ input {
 .homepage-bottom-left {
     background-color: red;
     height: 70vh;
+    width: 50vw;
+}
+
+.bottom-left-picture {
+    width: 50vw;
+    height: 70vh;
+    object-fit: cover;
 }
 
 /* Mylists Page */
