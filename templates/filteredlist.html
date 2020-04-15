@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>FILTERED LIST</h1>
+
 <div class="container-fluid full-width">
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
@@ -10,26 +12,27 @@
 	</div>
 
 	<div class="row row-no-gutter">
-		<div class="col-12 mylist-container">
+		<div class="col-12 mylist-container"> 
             <p class="list-filter-styling">Filter by: <a href="" class="filter-button-1">Brand, </a><a href="" class="filter-button-2 left-padding-sm">Price, </a><a href="" class="filter-button-3 left-padding-sm">Urgency</a></p>
         </div>
 	</div>
 
+    {% for item in collection %}
 	<div class="row row-no-gutter">
 		<div class="col-12">
             <div class="row mylist-container">
                 <div class="col-12">
-                    <a href="" class="list-name">{{ list_items.list_name }}</a>
+                    <a href="" class="list-name">{{ item.list_name }}</a>
                 </div>
             </div>
             <div class="row mylist-container">
                 <div class="col-12 list-items">
-                    {% for item in list_items['items'] %}
+                    {% for items in item['items'] %}
                     <div class="col-12">
-                        <p class="padding-top">{{ item.brand_name }} {{ item.product_type }}</p>
-                        <p>{{ item.item_description }}</p>
-                        <p>{{ item.item_price }}</p>
-                        <p>{{ item.need_rating }}</p>
+                        <p class="padding-top">{{ items.brand_name }} {{ items.product_type }}</p>
+                        <p>{{ items.item_description }}</p>
+                        <p>{{ items.item_price }}</p>
+                        <p>{{ items.need_rating }}</p>
                         <a href="{{ url_for('edititem', item_id=item._id) }}" class="edit-button">Edit Item,</a>
                         <a href="{{ url_for('deleteitem', item_id=item._id) }}" class="delete-button left-padding">Delete Item</a>
                     </div>
@@ -38,6 +41,7 @@
             </div>
 		</div>
 	</div>
+    {% endfor %}
 </div>
 
 {% endblock %}

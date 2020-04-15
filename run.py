@@ -94,10 +94,13 @@ def deletelist(list_id):
 
 
 # Function to view all items in a list
-@app.route("/listitems")
-def listitems():
+@app.route("/listitems/<list_id>")
+def listitems(list_id):
+    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    print(list_items)
+    
     return render_template('listitems.html',
-    collection=mongo.db.wt_collection.find())
+                            list_items=list_items)
 
 
 # Function to add a new item to a list

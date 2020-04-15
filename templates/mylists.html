@@ -18,7 +18,7 @@
 		<div class="col-12">
 			{% for name in collection %}
 			<div class="mylist-container">
-				<a href="{{ url_for('listitems') }}" class="list-name">{{ name.list_name }}</a>
+				<a href="{{ url_for('listitems', list_id=name._id) }}" class="list-name">{{ name.list_name }}</a>
                 <p class="padding-top fix-asap">Number of items</p>
                 <a href="{{ url_for('additem', list_id=name._id) }}" class="add-item">Add to this list,</a>
 				<a href="{{ url_for('editlist', list_id=name._id) }}" class="edit-button left-padding">Edit list,</a>
