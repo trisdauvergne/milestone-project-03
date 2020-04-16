@@ -15,50 +15,66 @@
 			<div class="row mylist-container">
 				<form action="{{ url_for('additem', list_id=list_items._id) }}" method="POST" class="form-left-padding">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1" class="fix-asap">List name (to be a preset value)</label>
-                    <select class="form-control" id="list_name" name="list_name">
-                        {% for item in list_items %}
-                            <option value="{{ item.list_name }}">
-                            {{ item.list_name }}</option>
-                        {% endfor %}
-                    </select>
+                    <label for="exampleFormControlSelect1">List name</label>
+                    <input type="text" class="form-control" id="list_name" value="{{ list_items.list_name }}" name="list_name" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Link to product (required)</label>
-                    <input type="text" class="form-control" id="product_link" placeholder="Example input" name="product_link">
+                    <label for="formGroupExampleInput">Link to product</label>
+                    <input type="url" class="form-control" id="product_link" placeholder="Paste a link to the item here (required)" name="product_link" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Brand (required)</label>
-                    <input type="text" class="form-control" id="brand_name" placeholder="Example input" name="brand_name">
+                    <label for="formGroupExampleInput">Brand</label>
+                    <input type="text" class="form-control" id="brand_name" placeholder="Type the name of the brand here (required)" name="brand_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Category / product type (required)</label>
-                    <select class="form-control" id="product_type" name="product_type">
-                        <option>Trainers</option>
-                        <option>Shirt</option>
-                        <option>Trousers</option>
+                    <label for="exampleFormControlSelect1">Category / product type</label>
+                    <select class="form-control" id="product_type" name="product_type" required>
+                        <option>Bag</option>
+                        <option>Belt</option>
+                        <option>Boots</option>
+                        <option>Coat</option>
+                        <option>Dress</option>
+                        <option>Gloves</option>
+                        <option>Hat</option>
+                        <option>Heels</option>
+                        <option>Hoodie</option>
                         <option>Jacket</option>
-                        <option>Skirt</option>
+                        <option>Jeans</option>
+                        <option>Leggings</option>
+                        <option>Sandals</option>
                         <option>Scarf</option>
+                        <option>Shirt</option>
+                        <option>Shorts</option>
+                        <option>Skirt</option>
+                        <option>Smart shoes</option>
+                        <option>Socks</option>
+                        <option>Sunglasses</option>
+                        <option>Sweater</option>
+                        <option>Swimwear</option>
                         <option>T-shirt</option>
+                        <option>Tie</option>
+                        <option>Tracksuit</option>
+                        <option>Underwear</option>
+                        <option>Trainers</option>
+                        <option>Wallet</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Description (optional)</label>
-                    <input type="text" class="form-control" id="item_description" name="item_description" placeholder="Item Description">
+                    <label for="exampleFormControlInput1">Description</label>
+                    <input type="text" class="form-control" id="item_description" name="item_description" placeholder="A few words to jog your memory">
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Price (required)</label>
-                    <input type="brand brand" lass="form-control" id="item_price" placeholder="Example input" name="item_price">
+                    <label for="formGroupExampleInput">Price</label>
+                    <input type="number" class="form-control" id="item_price" placeholder="SEK (required)" name="item_price" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">How much do I need this? (required)</label>
-                    <select class="form-control" id="need_rating" name="need_rating">
-                        <option>I'm being greedy</option>
-                        <option>Kind of?</option>
-                        <option>Not urgently</option>
-                        <option>Need it and will use it every day</option>
-                        <option>ASAP!</option>
+                    <label for="exampleFormControlSelect1">How much do I need this?</label>
+                    <select class="form-control" id="need_rating" name="need_rating" required>
+                        <option>1. 😅 Not at all. Just wishful thinking. </option>
+                        <option>2. 🤔 Kind of?</option>
+                        <option>3. 🙂 I can wait until the end of the month. </option>
+                        <option>4. 😐 I need it soon. </option>
+                        <option>5. 😰 URGENTLY! I don't know if I can survive without it!</option>
                     </select>
                 </div>
                 <button type="submit" class="custom-button">Add Item</button>

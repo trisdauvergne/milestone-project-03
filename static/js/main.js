@@ -1,8 +1,8 @@
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+function mouseOver() {
+    document.getElementById("demo").style.color = "red";
 }
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+

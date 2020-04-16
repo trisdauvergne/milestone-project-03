@@ -55,6 +55,7 @@ def mylists_names():
     collection=mongo.db.wt_collection.find())
 
 
+
 # Function to create a new list
 @app.route("/newlist", methods=["GET", "POST"])
 def newlist():
@@ -127,7 +128,8 @@ def listitems_price(list_id):
 def listitems_brand(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
 
-    return render_template('listitems_price.html', list_items=list_items)
+    return render_template('listitems_brand.html', list_items=list_items)
+
 
 # Function to add a new item to a list
 @app.route("/additem/<list_id>", methods=["GET", "POST"])

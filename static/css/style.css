@@ -101,9 +101,10 @@ input {
 }
 
 .intro-copy {
-    margin: 0 10%;
+    margin: 10% 10% 0 10%;
     font-size: 20px;
     line-height: 200%;
+    font-weight: 500;
 }
 
 .start-button {
@@ -206,6 +207,11 @@ input {
     background-color: #feeb2b;
 }
 
+.navyellow {
+    display: none;
+    background-color: yellow;
+}
+
 .mylists-link:active {
     background-color: #feeb2b;
     color: white !important;
@@ -268,6 +274,7 @@ input {
 .start-button-text:hover {
     background-color: #f5489a;
 }
+
 
 /* Responsive navbar from W3 Schools */
 
