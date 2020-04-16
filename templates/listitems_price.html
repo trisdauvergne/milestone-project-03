@@ -22,15 +22,14 @@
                     <a href="" class="list-name listitems-left-padding">{{ list_items.list_name }}</a>
                 </div>
             </div>
-            {% for item in list_items['items'] %}
+            {% for item in list_items['items'] | sort(case_sensitive=false, attribute="brand_name") %}
             <div class="row mylist-container">
-            
                 <div class="col-12 list-items">
                     
                     <div class="col-12 listitems-left-padding">
                         <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
-                        <p>{{ item.item_price }} SEK</p>
+                        <p>{{ item.item_price|int }} SEK</p>
                         <p>{{ item.need_rating }}</p>
                         <a href="" class="edit-button">Edit Item,</a>
                         <a href="" class="delete-button left-padding">Delete Item</a>
