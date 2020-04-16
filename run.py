@@ -48,6 +48,13 @@ def mylists():
     collection=mongo.db.wt_collection.find())
 
 
+# Function to filter the my lists page alphabetically
+@app.route("/mylists_names")
+def mylists_names():
+    return render_template('mylists_names.html',
+    collection=mongo.db.wt_collection.find())
+
+
 # Function to create a new list
 @app.route("/newlist", methods=["GET", "POST"])
 def newlist():

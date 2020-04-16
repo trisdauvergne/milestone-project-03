@@ -11,12 +11,12 @@
 
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container">
-			<p class="list-filter-styling">Filter by: <a href="{{ url_for('mylists_names') }}" class="filter-button-1">Name, </a><a href="" class="filter-button-2 left-padding">No of items</a></p>
+			<p class="list-filter-styling">Sort by: <a href="" class="filter-button-1">Name, </a><a href="" class="filter-button-2 left-padding">No of items</a></p>
 		</div>
 	</div>
 	<div class="row row-no-gutter">
 		<div class="col-12">
-			{% for name in collection %}
+			{% for name in collection | sort(case_sensitive=false, attribute="list_name") %}
 			<div class="mylist-container">
 				<a href="{{ url_for('listitems', list_id=name._id) }}" class="list-name">{{ name.list_name }}</a>
                 <p class="padding-top">{{ name.list_description }}</p>
