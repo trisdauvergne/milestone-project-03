@@ -168,6 +168,7 @@ def edititem(list_id, item_id):
                     {"items._id": ObjectId(item_id)},
                     {"$set": {"items.$.list_name": list_name,
                               "items.$.product_link": product_link,
+                              "items.$.brand_name": brand_name,
                               "items.$.product_type": product_type,
                               "items.$.item_description": item_description,
                               "items.$.item_price": item_price,
@@ -180,17 +181,35 @@ def edititem(list_id, item_id):
                                     list=_list)
 
 
+# Function to delete an item from a list
+@app.route("/deleteitem/<list_id>/<item_id>")
+def deleteitem(list_id, item_id):
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
+
+    for item in _list['items']:
+
+        if str(item['_id']) == str(item_id):
+            mongo.db.wt_collection.update(
+                {"items._id": ObjectId(item_id)},
+                {"$unset": {"items.$.product_link":"",
+                            "items.$._id":"",
+                            "items.$.brand_name":"",
+                            "items.$.product_type":"",
+                            "items.$.item_description":"",
+                            "items.$.item_price":"",
+                            "items.$.need_rating":""}})
+
+    return redirect(url_for('deleteconfirmation'))
+
+
 @app.route("/itemadded")
 def itemadded():
     return render_template('itemadded.html')
 
 
-# Function to delete an item from a list
-@app.route("/deleteitem/<item_id>")
-def deleteitem(item_id):
-    mongo.db.wt_listitems.remove({'_id': ObjectId(item_id)})
-
-    return redirect(url_for('listitems'))
+@app.route("/deleteconfirmation")
+def deleteconfirmation():
+    return render_template('deleteconfirmation.html')
 
 
 # Test to check data can be sent to database
