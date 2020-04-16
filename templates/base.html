@@ -45,11 +45,9 @@
                                     Add an item
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                                    {% for %}
-                                        <a class="dropdown-item" href="{{ url_for('additem', list_id=) }}">{{ }}</a>
-                                    {% endfor %}
-                                    
+                                        {% for items in collection %}
+                                            <a class="dropdown-item" href="">{{ items.list_name }}</a>
+                                        {% endfor %}
                                     </div>
                                 </li>
 							</ul>

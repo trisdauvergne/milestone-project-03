@@ -31,6 +31,10 @@ def test():
     return render_template('test.html',
     collection=mongo.db.wt_collection.find())
 
+# Function to add item from Navbar
+@app.route("/navbaradd")
+def navbaradd():
+    collection=mongo.db.wt_collection.find()
 
 # Function to view lists
 @app.route("/mylists")
