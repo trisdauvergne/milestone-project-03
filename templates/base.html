@@ -36,27 +36,39 @@
 									<a class="nav-link createlist-link left-padding"
 										href="{{ url_for('newlist') }}">Create a list,</a>
 								</li>
-                                <li class="nav-item inline">
+                                <!-- <li class="nav-item inline">
 									<a class="nav-link additem-link left-padding fix-asap"
 										href="">Add an item <strong>+</strong></a>
-								</li>
+								</li> -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle fix-asap left-padding additem-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Add an item
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    {% for %}
+                                        <a class="dropdown-item" href="{{ url_for('additem', list_id=) }}">{{ }}</a>
+                                    {% endfor %}
+                                    
+                                    </div>
+                                </li>
 							</ul>
 						</div>
 					</div>
 				</nav>
 			</div>
 		</div>
-	</div>
 
 
-	<div class="container-fluid full-width">
-		<div class="row row-no-gutter">
+        <div class="container-fluid full-width">
+            <div class="row row-no-gutter">
 
 
-			{% block content %}
-			{% endblock %}
+                {% block content %}
+                {% endblock %}
 
-		</div>
+            </div>
+        </div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
