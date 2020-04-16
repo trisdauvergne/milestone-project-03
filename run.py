@@ -191,13 +191,8 @@ def deleteitem(list_id, item_id):
         if str(item['_id']) == str(item_id):
             mongo.db.wt_collection.update(
                 {"items._id": ObjectId(item_id)},
-                {"$unset": {"items.$.product_link":"",
-                            "items.$._id":"",
-                            "items.$.brand_name":"",
-                            "items.$.product_type":"",
-                            "items.$.item_description":"",
-                            "items.$.item_price":"",
-                            "items.$.need_rating":""}})
+                {"$pull": { 'items': {"_id": ObjectId(item_id)}}})
+            print(item_id)
 
     return redirect(url_for('deleteconfirmation'))
 
