@@ -44,11 +44,6 @@
                                     <a class="nav-link dropdown-toggle fix-asap left-padding additem-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Add an item
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        {% for items in collection %}
-                                            <a class="dropdown-item" href="">{{ items.list_name }}</a>
-                                        {% endfor %}
-                                    </div>
                                 </li>
 							</ul>
 						</div>
@@ -61,8 +56,8 @@
         <div class="container-fluid full-width">
             <div class="row row-no-gutter">
 
-
                 {% block content %}
+
                 {% endblock %}
 
             </div>
