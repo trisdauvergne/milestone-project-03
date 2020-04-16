@@ -21,7 +21,6 @@ mongo = PyMongo(app)
 
 listcoll = mongo.db.wt_collection
 itemcoll = mongo.db.wt_listitems
-navbar_collection = mongo.db.wt_collection.find()
 
 
 @app.route("/")
@@ -109,10 +108,11 @@ def listitems(list_id):
 
 
 # Function to sort items by price
-@app.route("/listitems_price")
-def listitems_price():
+@app.route("/listitems_price/<list_id>")
+def listitems_price(list_id):
+    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
 
-    return render_template('listitems_price.html')
+    return render_template('listitems_price.html', list_items=list_items)
 
 
 # Function to add a new item to a list
@@ -187,7 +187,7 @@ def edititem(list_id, item_id):
                               "items.$.item_price": item_price,
                               "items.$.need_rating": need_rating}})
 
-                return redirect(url_for('itemadded'))
+                return redirect(url_for('itemedited'))
 
             return render_template('edititem.html', 
                                     item_info=item, 
@@ -210,9 +210,16 @@ def deleteitem(list_id, item_id):
     return redirect(url_for('deleteconfirmation'))
 
 
+# When an item has been added
 @app.route("/itemadded")
 def itemadded():
     return render_template('itemadded.html')
+
+
+# When an item has been edited
+@app.route("/itemedited")
+def itemedited():
+    return render_template('itemedited.html')
 
 
 @app.route("/deleteconfirmation")

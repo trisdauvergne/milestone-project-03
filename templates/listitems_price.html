@@ -5,7 +5,7 @@
 <div class="container-fluid full-width">
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
-            <p class="header-row">List items</p>
+            <p class="header-row">Items sorted by price</p>
         </div>
 	</div>
 
@@ -32,8 +32,8 @@
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }} SEK</p>
                         <p>{{ item.need_rating }}</p>
-                        <a href="{{ url_for('edititem', list_id=list_items._id,item_id=item._id) }}" class="edit-button">Edit Item,</a>
-                        <a href="{{ url_for('deleteitem', list_id=list_items._id, item_id=item._id) }}" class="delete-button left-padding">Delete Item</a>
+                        <a href="" class="edit-button">Edit Item,</a>
+                        <a href="" class="delete-button left-padding">Delete Item</a>
                     </div>
                    
                 </div>
@@ -43,7 +43,7 @@
 
             <div class="row mylist-container">
                 <div class="col-12">
-                    <a href="{{ url_for('additem', list_id=list_items._id) }}" class="add-to-list listitems-left-padding">Add to this list</a>
+                    <a href="" class="add-to-list listitems-left-padding">Add to this list</a>
                 </div>
             </div>
 		</div>
