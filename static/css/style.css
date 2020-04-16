@@ -72,7 +72,6 @@ input {
 }
 
 .homepage-top-right {
-    background-color: red;
     height: 70vh;
     width: 50vw;
     border-left: solid black 4px;
@@ -91,7 +90,6 @@ input {
 }
 
 .homepage-bottom-left {
-    background-color: red;
     height: 70vh;
     width: 50vw;
 }
@@ -100,6 +98,22 @@ input {
     width: 50vw;
     height: 70vh;
     object-fit: cover;
+}
+
+.intro-copy {
+    margin: 0 10%;
+    font-size: 20px;
+    line-height: 200%;
+}
+
+.start-button {
+    font-size: 10vh;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: baseline;
+    margin-top: 16px;
 }
 
 /* Mylists Page */
@@ -249,6 +263,10 @@ input {
 
 .add-to-list:hover {
     background-color:#01a1e3;
+}
+
+.start-button-text:hover {
+    background-color: #f5489a;
 }
 
 /* Responsive navbar from W3 Schools */
