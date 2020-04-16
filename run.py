@@ -1,8 +1,5 @@
 import os
 import operator
-import requests
-import urllib.request
-from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -252,7 +249,8 @@ print(listcoll.count_documents({}))
 print(listcoll.count_documents({'list_name': 'Holiday gear'}))
 
 
-if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=True)
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("IP", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "5000")),
+        debug=False)
