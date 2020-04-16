@@ -115,6 +115,13 @@ def listitems_price(list_id):
     return render_template('listitems_price.html', list_items=list_items)
 
 
+# Function to sort items by brand name
+@app.route("/listitems_brand/<list_id>")
+def listitems_brand(list_id):
+    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+
+    return render_template('listitems_price.html', list_items=list_items)
+
 # Function to add a new item to a list
 @app.route("/additem/<list_id>", methods=["GET", "POST"])
 def additem(list_id):
