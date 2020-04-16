@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'wt_database'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 mongo = PyMongo(app)
@@ -20,6 +21,8 @@ mongo = PyMongo(app)
 
 listcoll = mongo.db.wt_collection
 itemcoll = mongo.db.wt_listitems
+navbar_collection = mongo.db.wt_collection.find()
+
 
 @app.route("/")
 def hello():
@@ -31,11 +34,13 @@ def test():
     return render_template('test.html',
     collection=mongo.db.wt_collection.find())
 
+
 # Function to add item from Navbar
 @app.route("/navbaradd")
 def navbaradd():
     return render_template('welcomepage.html',
     collection=mongo.db.wt_collection.find())
+
 
 # Function to view lists
 @app.route("/mylists")
@@ -85,10 +90,10 @@ def editlist(list_id):
 
         return redirect(url_for('mylists'))
 
-    return render_template('editlist.html',
-                            list_info=lists)
+    return render_template('editlist.html', list_info=lists)
 
 
+# Function to delete a list
 @app.route("/deletelist/<list_id>")
 def deletelist(list_id):
     mongo.db.wt_collection.remove({'_id': ObjectId(list_id)})
@@ -100,9 +105,14 @@ def deletelist(list_id):
 @app.route("/listitems/<list_id>")
 def listitems(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
-    
-    return render_template('listitems.html',
-                            list_items=list_items)
+    return render_template('listitems.html', list_items=list_items)
+
+
+# Function to sort items by price
+@app.route("/listitems_price")
+def listitems_price():
+
+    return render_template('listitems_price.html')
 
 
 # Function to add a new item to a list
@@ -138,6 +148,7 @@ def additem(list_id):
                             list_items=list_items)
 
 
+# Function to edit an item in a list
 @app.route("/edititem/<list_id>/<item_id>", methods=["GET", "POST"])
 def edititem(list_id, item_id):
     _list = listcoll.find_one({'_id': ObjectId(list_id)})
