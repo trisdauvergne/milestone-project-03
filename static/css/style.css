@@ -8,6 +8,19 @@ body {
     font-family: 'IBM Plex Sans', sans-serif !important;
 }
 
+.newlist-width {
+    width: 25vw;
+}
+
+.instruction-row {
+    padding: 16px 0 !important;
+}
+
+/* Bootstrap toggle icon */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 a {
     color: black !important;
     text-decoration: none !important;

@@ -62,11 +62,9 @@ def newlist():
 
     if request.method == 'POST':
         list_name = request.form['list_name']
-        list_category = request.form['list_category']
         list_description = request.form['list_description']
 
         newly_added_list = {'list_name': list_name,
-                            'list_category': list_category,
                             'list_description': list_description,
                             'items': []}
 
@@ -187,7 +185,7 @@ def additem(list_id):
 @app.route("/edititem/<list_id>/<item_id>", methods=["GET", "POST"])
 def edititem(list_id, item_id):
     _list = listcoll.find_one({'_id': ObjectId(list_id)})
-    navbar_collection=mongo.db.wt_collection.find()
+    navbar_collection = mongo.db.wt_collection.find()
 
     for item in _list['items']:
         print(item['_id'], item_id)
@@ -251,21 +249,23 @@ def deleteitem(list_id, item_id):
 # When an item has been added
 @app.route("/itemadded/<list_id>")
 def itemadded(list_id):
-    navbar_collection=mongo.db.wt_collection.find()
-    _list=listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection = mongo.db.wt_collection.find()
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
 
     return render_template('itemadded.html',
-                            _list=_list,
-                            navbar_location=navbar_collection)
+                            _list = _list,
+                            navbar_location = navbar_collection)
 
 
 # When an item has been edited
-@app.route("/itemedited")
-def itemedited():
-    navbar_collection=mongo.db.wt_collection.find()
+@app.route("/itemedited/<list_id>")
+def itemedited(list_id):
+    navbar_collection = mongo.db.wt_collection.find()
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
 
     return render_template('itemedited.html',
-                            navbar_location=navbar_collection)
+                            _list = _list,
+                            navbar_location = navbar_collection)
 
 
 # Item delete confirmation
@@ -306,17 +306,6 @@ def create():
     mongo.db.wt_listitems.insert_one(new_list_item)
 
     return render_template('create.html', document=new_list_item)
-
-
-@app.route("/mumsbirthday")
-def mumsbirthday():
-    # results = itemcoll.find({'list_name': 'Mums birthday'})
-
-    # return render_template('testresults.html', results=results)
-
-    for items in itemcoll.find_one({'list_name':'Mums birthday'}):
-        return render_template('testresults.html',
-                                results=items)
 
 
 # To check query is correct
