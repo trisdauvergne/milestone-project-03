@@ -176,7 +176,7 @@ def additem(list_id):
 
         listcoll.update_one({'_id': ObjectId(list_id)}, {'$push': {'items':appended_item}})
 
-        return redirect(url_for('mylists'))
+        return redirect(url_for('itemadded'))
         
     return render_template('additem.html',
                             list_items=list_items,
@@ -249,11 +249,13 @@ def deleteitem(list_id, item_id):
 
 
 # When an item has been added
-@app.route("/itemadded")
-def itemadded():
+@app.route("/itemadded/<list_id>")
+def itemadded(list_id):
     navbar_collection=mongo.db.wt_collection.find()
+    _list=listcoll.find_one({'_id': ObjectId(list_id)})
 
     return render_template('itemadded.html',
+                            _list=_list,
                             navbar_location=navbar_collection)
 
 
