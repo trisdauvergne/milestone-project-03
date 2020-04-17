@@ -3,6 +3,7 @@ import operator
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from operator import itemgetter
 from os import path
 if path.exists("env.py"):
     import env
@@ -118,9 +119,14 @@ def listitems(list_id):
 # Function to sort items by price
 @app.route("/listitems_price/<list_id>")
 def listitems_price(list_id):
-    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    list_items=listcoll.find_one({'_id': ObjectId(list_id)})
+    list_of_items=list_items['items']
+    for item in list_of_items:
+        item['item_price'] = int(item['item_price'])
+    newlist = sorted(list_of_items, key=itemgetter('item_price'))
+    print(newlist)
 
-    return render_template('listitems_price.html', list_items=list_items)
+    return render_template('listitems_price.html', list_items=newlist)
 
 
 # Function to sort items by brand name

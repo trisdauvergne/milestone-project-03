@@ -22,7 +22,7 @@
                     <a href="" class="list-name listitems-left-padding">{{ list_items.list_name }}</a>
                 </div>
             </div>
-            {% for item in list_items['items'] | sort(reverse = true, attribute=int("item.item_price")) %}
+            {% for item in list_items %}
             <div class="row mylist-container">
                 <div class="col-12 list-items">
                     
