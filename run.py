@@ -273,7 +273,8 @@ def deleteitem(list_id, item_id):
                 {"$pull": {'items': {"_id": ObjectId(item_id)}}})
             print(item_id)
 
-    return redirect(url_for('deleteconfirmation'))
+    return render_template('deleteconfirmation.html',
+                           _list=_list)
 
 
 # When an item has been added
@@ -306,6 +307,7 @@ def deleteconfirmation_list():
 
     return render_template('deleteconfirmation_list.html',
                             navbar_location=navbar_collection)
+
 
 # Test to check data can be sent to database
 @app.route("/create")
