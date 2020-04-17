@@ -146,8 +146,8 @@ def additem(list_id):
     print(list_items)
 
     if request.method == 'POST':
-        list_name = request.form['list_name']
         product_link = request.form['product_link']
+        image_link = request.form['image_link']
         brand_name = request.form['brand_name']
         product_type = request.form['product_type']
         item_description = request.form['item_description']
@@ -156,6 +156,7 @@ def additem(list_id):
 
         appended_item = {'_id': ObjectId(),
                          'product_link': product_link,
+                         'image_link': image_link,
                          'brand_name': brand_name,
                          'product_type': product_type,
                          'item_description': item_description,
@@ -183,6 +184,7 @@ def edititem(list_id, item_id):
             if request.method == 'POST':
                 list_name = request.form['list_name']
                 product_link = request.form['product_link']
+                image_link = request.form['image_link']
                 brand_name = request.form['brand_name']
                 product_type = request.form['product_type']
                 item_description = request.form['item_description']
@@ -191,6 +193,7 @@ def edititem(list_id, item_id):
 
                 item = {'list_name': list_name,
                         'product_link': product_link,
+                        'image_link': image_link,
                         'brand_name': brand_name,
                         'product_type': product_type,
                         'item_description': item_description,
@@ -203,6 +206,7 @@ def edititem(list_id, item_id):
                     {"items._id": ObjectId(item_id)},
                     {"$set": {"items.$.list_name": list_name,
                               "items.$.product_link": product_link,
+                              "items.$.image_link": image_link,
                               "items.$.brand_name": brand_name,
                               "items.$.product_type": product_type,
                               "items.$.item_description": item_description,

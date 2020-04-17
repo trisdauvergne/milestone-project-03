@@ -23,11 +23,12 @@
                 </div>
             </div>
             {% for item in list_items['items'] %}
-            <div class="row mylist-container">
-            
-                <div class="col-12 list-items">
-                    
-                    <div class="col-12 listitems-left-padding">
+            <div class="row items-container">
+                <div class="col-4 image-container">
+                    <img src="{{ item.image_link }}" align="right" class="item-image">
+                </div>
+                <div class="col-8 list-items">
+                    <div class="col-12">
                         <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }} SEK</p>
@@ -35,9 +36,7 @@
                         <a href="{{ url_for('edititem', list_id=list_items._id,item_id=item._id) }}" class="edit-button">Edit Item,</a>
                         <a href="{{ url_for('deleteitem', list_id=list_items._id, item_id=item._id) }}" class="delete-button left-padding">Delete Item</a>
                     </div>
-                   
                 </div>
-            
             </div>
             {% endfor %}
 

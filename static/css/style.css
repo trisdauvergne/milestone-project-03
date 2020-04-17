@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:100,200,300,400,500,600,700');
+
 
 /* General */
 body {
@@ -128,6 +130,30 @@ input {
 }
 
 /* List Items Page */
+.items-container {
+    border-bottom: 4px solid black;
+    font-size: 25px;
+    font-weight: 500;
+    /* padding-top: 16px;
+    padding-bottom: 16px; */
+}
+
+.item-image {
+    max-height: 29vh;
+    object-fit: contain;
+    /* border: solid black 4px; */
+    margin-right: 2vw;
+    border-right: solid black 4px;
+    border-left: solid black 4px;
+
+}
+
+.image-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow-x: hidden;
+}
+
 .list-filter-styling {
     padding-left: 33%;
     padding-top: 16px;
@@ -136,6 +162,7 @@ input {
 
 .list-items {
     font-size: 20px;
+    margin: 16px 0;
 }
 
 .list-items-bottom-border {

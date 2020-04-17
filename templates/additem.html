@@ -23,6 +23,10 @@
                     <input type="url" class="form-control" id="product_link" placeholder="Paste a link to the item here (required)" name="product_link" required>
                 </div>
                 <div class="form-group">
+                    <label for="formGroupExampleInput">Link to image</label>
+                    <input type="url" class="form-control" id="image_link" placeholder="Paste a link to the image here, you can find this by right clicking on the image and selecting 'Copy image address' (optional)" name="image_link">
+                </div>
+                <div class="form-group">
                     <label for="formGroupExampleInput">Brand</label>
                     <input type="text" class="form-control" id="brand_name" placeholder="Type the name of the brand here (required)" name="brand_name" required>
                 </div>
@@ -35,6 +39,7 @@
                         <option>Coat</option>
                         <option>Dress</option>
                         <option>Gloves</option>
+                        <option>Handbag</option>
                         <option>Hat</option>
                         <option>Heels</option>
                         <option>Hoodie</option>
@@ -70,11 +75,11 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">How much do I need this?</label>
                     <select class="form-control" id="need_rating" name="need_rating" required>
-                        <option>1. 😅 Not at all. Just wishful thinking. </option>
-                        <option>2. 🤔 Kind of?</option>
-                        <option>3. 🙂 I can wait until the end of the month. </option>
-                        <option>4. 😐 I need it soon. </option>
-                        <option>5. 😰 URGENTLY! I don't know if I can survive without it!</option>
+                        <option>1. Not at all. Just wishful thinking. </option>
+                        <option>2. Kind of?</option>
+                        <option>3. I can wait until the end of the month. </option>
+                        <option>4. I need it soon. </option>
+                        <option>5. URGENTLY! I don't know if I can survive without it!</option>
                     </select>
                 </div>
                 <button type="submit" class="custom-button">Add Item</button>
