@@ -10,7 +10,9 @@
 	</div>
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
-            <a href="" class="header-row">Go back to {{ _list.list_name }} list</p>
+            <div class="col-12">
+                <a href="{{ url_for('listitems', list_id=_list._id) }}" >Go back to {{ _list.list_name }} list</a>
+            </div>
         </div>
 	</div>
 </div>
