@@ -40,6 +40,7 @@
             <div class="row mylist-container">
                 <div class="col-12">
                     <a href="{{ url_for('additem', list_id=list_items._id) }}" class="add-to-list listitems-left-padding">Add to this list</a>
+                    <a href="{{ url_for('deletelist', list_id=list_items._id) }}" class="add-to-list listitems-left-padding fix-asap">Delete this list</a>
                 </div>
             </div>
 		</div>
