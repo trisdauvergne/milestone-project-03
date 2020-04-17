@@ -76,13 +76,13 @@ def newlist():
 @app.route("/editlist/<list_id>", methods=["GET", "POST"])
 def editlist(list_id):
     lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
-    navbar_collection=mongo.db.wt_collection.find()
+    navbar_collection = mongo.db.wt_collection.find()
 
     if request.method == 'POST':
         list_name = request.form['list_name']
         list_description = request.form['list_description']
 
-        result=mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
+        result = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
 
         updated_list = {'list_name': list_name,
                         'list_description': list_description,
@@ -90,11 +90,11 @@ def editlist(list_id):
 
         mongo.db.wt_collection.update({'_id': ObjectId(list_id)}, updated_list)
 
-        return redirect(url_for('listedited', list_id=list_id))
+        return redirect(url_for('listedited', list_id = list_id))
 
     return render_template('editlist.html',
-                            list_info=lists,
-                            navbar_location=navbar_collection)
+                            list_info = lists,
+                            navbar_location = navbar_collection)
 
 
 # Function when list is edited
@@ -120,17 +120,17 @@ def deletelist(list_id):
 @app.route("/listitems/<list_id>")
 def listitems(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
-    navbar_collection=mongo.db.wt_collection.find()
+    navbar_collection = mongo.db.wt_collection.find()
     return render_template('listitems.html',
-                            list_items=list_items,
-                            navbar_location=navbar_collection)
+                            list_items = list_items,
+                            navbar_location = navbar_collection)
 
 
 # Function to sort items by price
 @app.route("/listitems_price/<list_id>")
 def listitems_price(list_id):
-    navbar_collection=mongo.db.wt_collection.find()
-    _list=listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection = mongo.db.wt_collection.find()
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
 
     list_items=listcoll.find_one({'_id': ObjectId(list_id)})
 
@@ -168,17 +168,19 @@ def listitems_brand(list_id):
     return render_template('listitems_brand.html',
                             list_items=list_items,
                             navbar_location=navbar_collection)
-
+                            
 
 # Function to add a new item to a list
 @app.route("/additem/<list_id>", methods=["GET", "POST"])
 def additem(list_id):
+    print("testing the route is called")
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
-    navbar_collection=mongo.db.wt_collection.find()
+    navbar_collection = mongo.db.wt_collection.find()
     location_for_append = list_items.items
     print(list_items)
 
     if request.method == 'POST':
+        print("testing")
         product_link = request.form['product_link']
         image_link = request.form['image_link']
         brand_name = request.form['brand_name']
@@ -196,14 +198,17 @@ def additem(list_id):
                          'item_price': item_price,
                          'need_rating': need_rating}
 
+        print(product_type)
+
         listcoll.update_one({'_id': ObjectId(list_id)},
                             {'$push': {'items': appended_item}})
 
-        return redirect(url_for('itemadded'))
-        
+        return redirect(url_for('itemadded',
+                                list_id=list_id))
+       
     return render_template('additem.html',
-                            list_items=list_items,
-                            navbar_location=navbar_collection)
+                           list_items=list_items,
+                           navbar_location=navbar_collection)
 
 
 # Function to edit an item in a list
@@ -250,9 +255,9 @@ def edititem(list_id, item_id):
                 return redirect(url_for('itemedited', list_id=list_id))
 
             return render_template('edititem.html', 
-                                    item_info=item, 
-                                    list=_list,
-                                    navbar_location=navbar_collection)
+                                   item_info=item, 
+                                   list=_list,
+                                   navbar_location=navbar_collection)
 
 
 # Function to delete an item from a list
@@ -265,7 +270,7 @@ def deleteitem(list_id, item_id):
         if str(item['_id']) == str(item_id):
             mongo.db.wt_collection.update(
                 {"items._id": ObjectId(item_id)},
-                {"$pull": { 'items': {"_id": ObjectId(item_id)}}})
+                {"$pull": {'items': {"_id": ObjectId(item_id)}}})
             print(item_id)
 
     return redirect(url_for('deleteconfirmation'))
@@ -274,12 +279,12 @@ def deleteitem(list_id, item_id):
 # When an item has been added
 @app.route("/itemadded/<list_id>")
 def itemadded(list_id):
-    navbar_collection = mongo.db.wt_collection.find()
     _list = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection = mongo.db.wt_collection.find()
 
     return render_template('itemadded.html',
-                            _list = _list,
-                            navbar_location = navbar_collection)
+                            navbar_location = navbar_collection,
+                            _list=_list)
 
 
 # When an item has been edited
@@ -293,13 +298,6 @@ def itemedited(list_id):
                             navbar_location = navbar_collection)
 
 
-# Item delete confirmation
-@app.route("/deleteconfirmation")
-def deleteconfirmation():
-    navbar_collection=mongo.db.wt_collection.find()
-
-    return render_template('deleteconfirmation.html',
-                            navbar_location=navbar_collection)
 
 # List delete confirmation
 @app.route("/deleteconfirmation_list")
@@ -341,6 +339,7 @@ for items in itemcoll.find({'list_name': 'Mums birthday'}):
 print(listcoll.count_documents({}))
 
 print(listcoll.count_documents({'list_name': 'Holiday gear'}))
+
 
 
 if __name__ == "__main__":
