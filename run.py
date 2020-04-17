@@ -51,7 +51,6 @@ def mylists_names():
     collection=mongo.db.wt_collection.find())
 
 
-
 # Function to create a new list
 @app.route("/newlist", methods=["GET", "POST"])
 def newlist():
@@ -81,13 +80,11 @@ def editlist(list_id):
 
     if request.method == 'POST':
         list_name = request.form['list_name']
-        list_category = request.form['list_category']
         list_description = request.form['list_description']
 
         result=mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
 
         updated_list = {'list_name': list_name,
-                        'list_category': list_category,
                         'list_description': list_description,
                         'items': result['items']}
 
@@ -134,8 +131,11 @@ def listitems(list_id):
 def listitems_price(list_id):
     navbar_collection=mongo.db.wt_collection.find()
     _list=listcoll.find_one({'_id': ObjectId(list_id)})
+
     list_items=listcoll.find_one({'_id': ObjectId(list_id)})
+
     list_of_items=list_items['items']
+
     for item in list_of_items:
         item['item_price'] = int(item['item_price'])
     newlist = sorted(list_of_items, key=itemgetter('item_price'))
@@ -145,6 +145,18 @@ def listitems_price(list_id):
                             list_items=newlist,
                             _list=_list,
                             navbar_location=navbar_collection)
+
+
+# Function to sort items by urgency
+@app.route("/listitems_urgency/<list_id>")
+def listitems_urgency(list_id):
+    list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection=mongo.db.wt_collection.find()
+
+    return render_template('listitems_urgency.html',
+                            list_items=list_items,
+                            navbar_location=navbar_collection)
+
 
 
 # Function to sort items by brand name
@@ -163,7 +175,6 @@ def listitems_brand(list_id):
 def additem(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
     navbar_collection=mongo.db.wt_collection.find()
-
     location_for_append = list_items.items
     print(list_items)
 
@@ -185,7 +196,8 @@ def additem(list_id):
                          'item_price': item_price,
                          'need_rating': need_rating}
 
-        listcoll.update_one({'_id': ObjectId(list_id)}, {'$push': {'items':appended_item}})
+        listcoll.update_one({'_id': ObjectId(list_id)},
+                            {'$push': {'items': appended_item}})
 
         return redirect(url_for('itemadded'))
         
