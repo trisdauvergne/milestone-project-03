@@ -46,9 +46,10 @@
                                     Add an item
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    {% for items in navbar_location %}
+                                        <a class="dropdown-item" href="#">
+                                        {{ items.list_name }}</a>
+                                    {% endfor %}
                                     </div>
                                 </li>
 							</ul>

@@ -35,18 +35,13 @@ def test():
     collection=mongo.db.wt_collection.find())
 
 
-# Function to add item from Navbar
-@app.route("/navbaradd")
-def navbaradd():
-    return render_template('welcomepage.html',
-    collection=mongo.db.wt_collection.find())
-
-
 # Function to view lists
 @app.route("/mylists")
 def mylists():
+    navbar_collection=mongo.db.wt_collection.find()
     return render_template('mylists.html',
-    collection=mongo.db.wt_collection.find())
+    collection=mongo.db.wt_collection.find(),
+    navbar_location=navbar_collection)
 
 
 # Function to filter the my lists page alphabetically
@@ -183,7 +178,6 @@ def edititem(list_id, item_id):
         if str(item['_id']) == str(item_id):
             print('hello')
             if request.method == 'POST':
-                list_name = request.form['list_name']
                 product_link = request.form['product_link']
                 image_link = request.form['image_link']
                 brand_name = request.form['brand_name']
@@ -192,8 +186,7 @@ def edititem(list_id, item_id):
                 item_price = request.form['item_price']
                 need_rating = request.form['need_rating']
 
-                item = {'list_name': list_name,
-                        'product_link': product_link,
+                item = {'product_link': product_link,
                         'image_link': image_link,
                         'brand_name': brand_name,
                         'product_type': product_type,
@@ -205,7 +198,7 @@ def edititem(list_id, item_id):
 
                 mongo.db.wt_collection.update(
                     {"items._id": ObjectId(item_id)},
-                    {"$set": {"items.$.list_name": list_name,
+                    {"$set": {
                               "items.$.product_link": product_link,
                               "items.$.image_link": image_link,
                               "items.$.brand_name": brand_name,
@@ -284,7 +277,7 @@ def mumsbirthday():
 
     # return render_template('testresults.html', results=results)
 
-    for items in itemcoll.find({'list_name':'Mums birthday'}):
+    for items in itemcoll.find_one({'list_name':'Mums birthday'}):
         return render_template('testresults.html',
                                 results=items)
 

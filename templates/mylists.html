@@ -11,7 +11,7 @@
 
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container">
-			<p class="list-filter-styling">Filter by: <a href="{{ url_for('mylists_names') }}" class="filter-button-1">Name, </a><a href="" class="filter-button-2 left-padding">No of items</a></p>
+			<p class="list-filter-styling"><a href="{{ url_for('mylists_names') }}" class="filter-button-1">Sort lists by name</a></a></p>
 		</div>
 	</div>
 	<div class="row row-no-gutter">
@@ -19,7 +19,8 @@
 			{% for name in collection %}
 			<div class="mylist-container">
 				<a href="{{ url_for('listitems', list_id=name._id) }}" class="list-name">{{ name.list_name }}</a>
-                <p class="padding-top">{{ name.list_description }}</p>
+                <p class="padding-top fix-asap">Number of items</p>
+                <p>{{ name.list_description }}</p>
                 <a href="{{ url_for('additem', list_id=name._id) }}" class="add-item">Add to this list,</a>
 				<a href="{{ url_for('editlist', list_id=name._id) }}" class="edit-button left-padding">Edit list,</a>
 				<a href="{{ url_for('deletelist', list_id=name._id) }}" class="delete-button left-padding">Delete List</a>
