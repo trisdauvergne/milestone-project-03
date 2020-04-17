@@ -5,7 +5,7 @@
 <div class="container-fluid full-width">
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
-            <p class="header-row">List items</p>
+            <p class="header-row">{{ list_items.list_name }} items list</p>
         </div>
 	</div>
 
@@ -17,11 +17,6 @@
 
 	<div class="row row-no-gutter">
 		<div class="col-12">
-            <div class="row mylist-container">
-                <div class="col-12">
-                    <a href="" class="list-name listitems-left-padding">{{ list_items.list_name }}</a>
-                </div>
-            </div>
             {% for item in list_items['items'] %}
             <div class="row items-container">
                 <div class="col-4 image-container">
