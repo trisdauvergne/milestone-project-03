@@ -119,6 +119,7 @@ def listitems(list_id):
 # Function to sort items by price
 @app.route("/listitems_price/<list_id>")
 def listitems_price(list_id):
+    _list=listcoll.find_one({'_id': ObjectId(list_id)})
     list_items=listcoll.find_one({'_id': ObjectId(list_id)})
     list_of_items=list_items['items']
     for item in list_of_items:
@@ -126,7 +127,7 @@ def listitems_price(list_id):
     newlist = sorted(list_of_items, key=itemgetter('item_price'))
     print(newlist)
 
-    return render_template('listitems_price.html', list_items=newlist)
+    return render_template('listitems_price.html', list_items=newlist, _list=_list)
 
 
 # Function to sort items by brand name
