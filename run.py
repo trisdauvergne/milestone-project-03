@@ -55,9 +55,10 @@ def mylists_names():
 # Function to create a new list
 @app.route("/newlist", methods=["GET", "POST"])
 def newlist():
-
+    navbar_collection=mongo.db.wt_collection.find()
     if request.method == 'GET':
-        return render_template('newlist.html')
+        return render_template('newlist.html',
+                                navbar_location=navbar_collection)
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -78,6 +79,7 @@ def newlist():
 @app.route("/editlist/<list_id>", methods=["GET", "POST"])
 def editlist(list_id):
     lists = mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
+    navbar_collection=mongo.db.wt_collection.find()
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -93,7 +95,9 @@ def editlist(list_id):
 
         return redirect(url_for('mylists'))
 
-    return render_template('editlist.html', list_info=lists)
+    return render_template('editlist.html',
+                            list_info=lists,
+                            navbar_location=navbar_collection)
 
 
 # Function to delete a list
@@ -101,19 +105,23 @@ def editlist(list_id):
 def deletelist(list_id):
     mongo.db.wt_collection.remove({'_id': ObjectId(list_id)})
 
-    return redirect(url_for('mylists'))
+    return redirect(url_for('deleteconfirmation_list'))
 
 
 # Function to view all items in a list
 @app.route("/listitems/<list_id>")
 def listitems(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
-    return render_template('listitems.html', list_items=list_items)
+    navbar_collection=mongo.db.wt_collection.find()
+    return render_template('listitems.html',
+                            list_items=list_items,
+                            navbar_location=navbar_collection)
 
 
 # Function to sort items by price
 @app.route("/listitems_price/<list_id>")
 def listitems_price(list_id):
+    navbar_collection=mongo.db.wt_collection.find()
     _list=listcoll.find_one({'_id': ObjectId(list_id)})
     list_items=listcoll.find_one({'_id': ObjectId(list_id)})
     list_of_items=list_items['items']
@@ -122,21 +130,28 @@ def listitems_price(list_id):
     newlist = sorted(list_of_items, key=itemgetter('item_price'))
     print(newlist)
 
-    return render_template('listitems_price.html', list_items=newlist, _list=_list)
+    return render_template('listitems_price.html',
+                            list_items=newlist,
+                            _list=_list,
+                            navbar_location=navbar_collection)
 
 
 # Function to sort items by brand name
 @app.route("/listitems_brand/<list_id>")
 def listitems_brand(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection=mongo.db.wt_collection.find()
 
-    return render_template('listitems_brand.html', list_items=list_items)
+    return render_template('listitems_brand.html',
+                            list_items=list_items,
+                            navbar_location=navbar_collection)
 
 
 # Function to add a new item to a list
 @app.route("/additem/<list_id>", methods=["GET", "POST"])
 def additem(list_id):
     list_items = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection=mongo.db.wt_collection.find()
 
     location_for_append = list_items.items
     print(list_items)
@@ -164,13 +179,15 @@ def additem(list_id):
         return redirect(url_for('mylists'))
         
     return render_template('additem.html',
-                            list_items=list_items)
+                            list_items=list_items,
+                            navbar_location=navbar_collection)
 
 
 # Function to edit an item in a list
 @app.route("/edititem/<list_id>/<item_id>", methods=["GET", "POST"])
 def edititem(list_id, item_id):
     _list = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection=mongo.db.wt_collection.find()
 
     for item in _list['items']:
         print(item['_id'], item_id)
@@ -211,7 +228,8 @@ def edititem(list_id, item_id):
 
             return render_template('edititem.html', 
                                     item_info=item, 
-                                    list=_list)
+                                    list=_list,
+                                    navbar_location=navbar_collection)
 
 
 # Function to delete an item from a list
@@ -233,19 +251,36 @@ def deleteitem(list_id, item_id):
 # When an item has been added
 @app.route("/itemadded")
 def itemadded():
-    return render_template('itemadded.html')
+    navbar_collection=mongo.db.wt_collection.find()
+
+    return render_template('itemadded.html',
+                            navbar_location=navbar_collection)
 
 
 # When an item has been edited
 @app.route("/itemedited")
 def itemedited():
-    return render_template('itemedited.html')
+    navbar_collection=mongo.db.wt_collection.find()
+
+    return render_template('itemedited.html',
+                            navbar_location=navbar_collection)
 
 
+# Item delete confirmation
 @app.route("/deleteconfirmation")
 def deleteconfirmation():
-    return render_template('deleteconfirmation.html')
+    navbar_collection=mongo.db.wt_collection.find()
 
+    return render_template('deleteconfirmation.html',
+                            navbar_location=navbar_collection)
+
+# List delete confirmation
+@app.route("/deleteconfirmation_list")
+def deleteconfirmation_list():
+    navbar_collection=mongo.db.wt_collection.find()
+
+    return render_template('deleteconfirmation_list.html',
+                            navbar_location=navbar_collection)
 
 # Test to check data can be sent to database
 @app.route("/create")
