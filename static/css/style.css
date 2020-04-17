@@ -12,6 +12,11 @@ body {
     width: 25vw;
 }
 
+/* Tooltip on right */
+.test + .tooltip.right > .tooltip-arrow {
+    border-right: 5px solid black;
+}
+
 .instruction-row {
     padding: 16px 0 !important;
 }
@@ -42,6 +47,7 @@ input {
     background-color: red;
     color: white;
 }
+
 /* Left padding between edit button and delete button */
 .left-padding {
     margin-left: 30px;

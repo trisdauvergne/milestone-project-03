@@ -84,18 +84,31 @@ def editlist(list_id):
         list_category = request.form['list_category']
         list_description = request.form['list_description']
 
+        result=mongo.db.wt_collection.find_one({'_id': ObjectId(list_id)})
+
         updated_list = {'list_name': list_name,
                         'list_category': list_category,
                         'list_description': list_description,
-                        'items': []}
+                        'items': result['items']}
 
         mongo.db.wt_collection.update({'_id': ObjectId(list_id)}, updated_list)
 
-        return redirect(url_for('mylists'))
+        return redirect(url_for('listedited', list_id=list_id))
 
     return render_template('editlist.html',
                             list_info=lists,
                             navbar_location=navbar_collection)
+
+
+# Function when list is edited
+@app.route("/listedited/<list_id>")
+def listedited(list_id):
+    _list = listcoll.find_one({'_id': ObjectId(list_id)})
+    navbar_collection = mongo.db.wt_collection.find()
+
+    return render_template('listedited.html',
+                            _list = _list,
+                            navbar_location = navbar_collection)
 
 
 # Function to delete a list
@@ -222,7 +235,7 @@ def edititem(list_id, item_id):
                               "items.$.item_price": item_price,
                               "items.$.need_rating": need_rating}})
 
-                return redirect(url_for('itemedited'))
+                return redirect(url_for('itemedited', list_id=list_id))
 
             return render_template('edititem.html', 
                                     item_info=item, 

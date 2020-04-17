@@ -5,16 +5,18 @@
 <div class="container-fluid full-width">
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
-            <p class="header-row">Your item has been edited</p>
+            <p class="header-row">Your list has been edited</p>
         </div>
 	</div>
     <div class="row row-no-gutter">
 		<div class="col-12 mylist-container"> 
             <div class="col-12 instruction-row">
-                <a href="{{ url_for('listitems', list_id=_list._id) }}" class="header-row">Go back to {{ _list.list_name }} list</a>
+                <a href="{{ url_for('listitems', list_id=_list._id) }}" class="header-row">View items in {{ _list.list_name }}</a>
             </div>
         </div>
 	</div>
 </div>
 
 {% endblock %}
+
+
