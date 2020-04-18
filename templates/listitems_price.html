@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-8 list-items">
                     <div class="col-12">
-                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}<span class="click-text"> (Click to go to site)</a>
+                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }} SEK</p>
                         <p>Urgency: {{ item.need_rating }}</p>
@@ -40,7 +40,7 @@
             <div class="row mylist-container">
                 <div class="col-12">
                     <a href="{{ url_for('additem', list_id=list_items._id) }}" class="additem-link listitems-left-padding">Add to this list, </a>
-                    <a href="{{ url_for('deletelist', list_id=list_items._id) }}" class="delete-button listitems-left-padding fix-asap">Delete this list</a>
+                    <a href="{{ url_for('deletelist', list_id=list_items._id) }}" class="delete-button left-padding">Delete this list</a>
                 </div>
             </div>
 		</div>

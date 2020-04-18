@@ -16,9 +16,10 @@
             <a href="{{ url_for('listitems_urgency', list_id=list_items._id) }}" class="filter-button-3 left-padding-sm">Urgency</a></p>
         </div>
 	</div>
+    
 
 	<div class="row row-no-gutter">
-		<div class="col-12">
+		<div class="col-12 bottom-margin">
             {% for item in list_items['items'] %}
             <div class="row items-container">
                 <div class="col-4 image-container">
@@ -26,7 +27,7 @@
                 </div>
                 <div class="col-8 list-items">
                     <div class="col-12">
-                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}<span class="click-text"> (Click to go to site)</span></a>
+                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }} SEK</p>
                         <p>Urgency: {{ item.need_rating }}</p>
@@ -37,10 +38,10 @@
             </div>
             {% endfor %}
 
-            <div class="row mylist-container">
+            <div class="row row-no-gutter mylist-container">
                 <div class="col-12">
-                    <a href="{{ url_for('additem', list_id=list_items._id) }}" class="additem-link listitems-left-padding">Add an item to this list, </a>
-                    <a href="{{ url_for('deletelist', list_id=list_items._id) }}" class=" listitems-left-padding delete-button">Delete this list</a>
+                    <a href="{{ url_for('additem', list_id=list_items._id) }}" class="additem-link">Add to this list, </a>
+                    <a href="{{ url_for('deletelist', list_id=list_items._id) }}" class=" left-padding delete-button">Delete this list</a>
                 </div>
             </div>
 		</div>

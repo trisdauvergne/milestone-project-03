@@ -12,11 +12,6 @@ body {
     width: 25vw;
 }
 
-/* Tooltip on right */
-.test + .tooltip.right > .tooltip-arrow {
-    border-right: 5px solid black;
-}
-
 .instruction-row {
     padding: 16px 0 !important;
 }
@@ -139,6 +134,7 @@ input {
 }
 
 /* Mylists Page */
+
 .mylist-container {
     border-bottom: 4px solid black;
     font-size: 25px;
@@ -146,6 +142,10 @@ input {
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 33%;
+}
+
+.list-name {
+    text-decoration: underline !important;
 }
 
 .description {
@@ -201,6 +201,22 @@ input {
     font-weight: 200;
     color: #D4D4D4
 }
+
+.website-link {
+    text-decoration: underline !important; 
+}
+
+/* .footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    border-top: solid 4px black;
+}
+
+.bottom-margin {
+    margin-bottom: 50px;
+} */
 
 /* Header Row */
 .header-row {
