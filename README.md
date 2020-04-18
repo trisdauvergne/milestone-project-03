@@ -137,4 +137,13 @@ The user is able to edit a list by clicking on **Edit list** on the 'My lists' p
 When the user clicks **delete list** on the 'My lists' page this deletes the list. The user then receives confirmation that the list has been deleted. On the confirmation page, the user is given the option to **go back to lists** where the remaining lists will be displayed.  
 
 ## List Items Page
-If the user clicks on a list name in the 'My lists' page, a **list display** of all the items within that list will appear on a new page. The **name of the list** will appear at the top of the page, beneath the nav bar. Beneath this will be options for the user to sort the list  
+If the user clicks on a list name in the 'My lists' page, a **list display** of all the items within that list will appear on a new page. The **name of the list** will appear at the top of the page, beneath the nav bar. There will be 3 options beneath the list name that will allow the user to sort items by **brand name**, by **price** and by **urgency**.
+
+Beneath these options will sit the items in the list. Each item will consist of an **image** which will be displayed from the image link the user input. Next to the image link will be the item **heading**, which will be a link to the retailer. Beneath this will be the item description, the price, the urgency and the options to **edit item** and **delete item**. 
+
+At the bottom of the page the user can **add to this list**, which will take them to the add an item page or **delete the list** which will delete the list and its contents.
+
+If the user clicks on sort items by brand name, it will open a new page and show results in alphabetical order. If the user clicks on sort by price, it will show the results in ascending order. If the user clicks on sort by urgency, it will show the most urgent results first. 
+
+## Delete Item
+If the user clicks on **delete item** on the list items page, this will delete that item. The user will then be taken to a confirmation page where they will be given the option to **Go back to list** with the list name populated from the database. 

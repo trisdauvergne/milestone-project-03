@@ -14,29 +14,30 @@
             <div class="row mylist-container">
                 <form action="{{ url_for('edititem', list_id=list._id, item_id=item_info._id) }}" method="POST" class="form-left-padding">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">List name</label>
+                        <label for="list_name">List name</label>
                         <select class="form-control" id="list_name" name="list_name">
                             <option value="{{ item_info.list_name }}">{{ list.list_name }}</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Link to product</label>
+                        <label for="product_link">Link to product</label>
                         <input type="url" class="form-control" id="product_link" value="{{ item_info.product_link}}" name="product_link">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Link to image</label>
+                        <label for="image_link">Link to image</label>
                         <input type="url" class="form-control" id="image_link" placeholder="Paste a link to the image here, you can find this by right clicking on the image and selecting 'Copy image address' (optional)" value="{{ item_info.image_link }}" name="image_link">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Brand</label>
+                        <label for="brand_name">Brand</label>
                         <input type="text" class="form-control" id="brand_name" value="{{ item_info.brand_name }}" name="brand_name">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Category / product type</label>
+                        <label for="product_type">Category / product type</label>
                         <select class="form-control" id="product_type" name="product_type">
                             <option value="{{ item_info.product_type }}">{{ item_info.product_type }}</option>
                             <option>Bag</option>
                             <option>Belt</option>
+                            <option>Blazer</option>
                             <option>Boots</option>
                             <option>Coat</option>
                             <option>Dress</option>
@@ -53,7 +54,7 @@
                             <option>Shirt</option>
                             <option>Shorts</option>
                             <option>Skirt</option>
-                            <option>Smart shoes</option>
+                            <option>Shoes</option>
                             <option>Socks</option>
                             <option>Sunglasses</option>
                             <option>Sweater</option>
@@ -61,28 +62,30 @@
                             <option>T-shirt</option>
                             <option>Tie</option>
                             <option>Tracksuit</option>
-                            <option>Underwear</option>
                             <option>Trainers</option>
+                            <option>Trousers</option>
+                            <option>Underwear</option>
                             <option>Wallet</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Description</label>
+                        <label for="item_description">Description</label>
                         <input type="text" class="form-control" id="item_description" name="item_description" value="{{ item_info.item_description }}">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Price</label>
+                        <label for="item_price">Price</label>
                         <input type="number" class="form-control" id="item_price" value="{{ item_info.item_price }}" name="item_price">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">How much do I need this?</label>
+                        <label for="need_rating">How much do I need this?</label>
                         <select class="form-control" id="need_rating" name="need_rating" required>
                             <option value="{{ item_info.need_rating }}">{{ item_info.need_rating }}</option>
-                            <option>0% Not at all. Just wishful thinking. </option>
-                            <option>25% Kind of?</option>
-                            <option>50% I can wait until the end of the month. </option>
-                            <option>75% I need it soon. </option>
-                            <option>100% URGENTLY! I don't know if I can survive without it!</option>
+                            <option label="Think about your finances and the environment" value=""></option>
+                            <option>ASAP! 100% wanted and needed in my life!</option>
+                            <option>I need this. Not today, but soon</option>
+                            <option>Need, but it can wait until payday</option>
+                            <option>Probably not, but I'll think about it</option>
+                            <option>Totally unnecessary. It's just nice to dream...</option>
                         </select>
                     </div>
                     <button type="submit" class="custom-button">Update Item</button>
