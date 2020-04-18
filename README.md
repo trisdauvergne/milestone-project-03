@@ -12,6 +12,8 @@ The user will be able to create a new list, such as a list for a birthday presen
 
 When inputting information about an item into the site, the user will also be asked how much they need an item with the aim of deterring unnecessary spending, thinking about their finances and also to minimise the environmental impact.
 
+NOTE: This site has been designed with multiple users in mind. A login system will be implemented in future development of the project to enable multiple users to use the site, with their lists to be stored and accessed when logged in. 
+
 ## UX
 
 ### Site Users - who is the site focused on?
@@ -211,3 +213,12 @@ The format of this page will be the same across all screen sizes.
 - **Delete item** will delete the item in the list
 - **Add to this list** at the bottom of the items list page will allow the user to add a new item to the list
 - **Delete the list** at the bottom of the list items page will delete the entire list and its contents
+
+### Features to implement in the future
+- A login system that would allow user sessions to be logged
+- A sharing system with varying levels of access that would allow multiple users to add to the same list, edit and delete (depending on access levels)
+- Confirmation requests before a user edits or deletes information
+- A scraping feature that to eliminate the need for the user to input a separate image link along with multiple lines of input into the form. This would allow the process to be much smoother and quicker for the user
+- A filter feature in addition to the sort function to only show certain results
+- A 'click to buy' feature for users to make purchases through the site
+
