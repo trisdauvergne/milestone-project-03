@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid full-width">
+	<div class="row row-no-gutter mylist-sm-screen">
+		<div class="col-12 mylist-container"> 
+            <p class="header-row">Which list would you like to add an item to?</p>
+        </div>
+	</div>
+
+    <div class="row row-no-gutter">
+		<div class="col-12 mylist-container">
+			<p class="list-filter-styling"><a href="{{ url_for('mylists_names') }}" class="filter-button-1">Sort lists alphabetically</a></p>
+		</div>
+	</div>
+	<div class="row row-no-gutter">
+		<div class="col-12">
+			{% for name in collection %}
+			<div class="mylist-container">
+				<a href="{{ url_for('additem', list_id=name._id) }}" class="list-name">{{ name.list_name }}</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}

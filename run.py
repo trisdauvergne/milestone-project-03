@@ -45,6 +45,13 @@ def mylists_names():
                            collection=mongo.db.wt_collection.find())
 
 
+# To add to list after clicking on add an item in navbar
+@app.route("/mylists_additem")
+def mylists_additem():
+    return render_template('mylists_additem.html',
+                           collection=mongo.db.wt_collection.find())
+
+
 # Create a brand new list
 @app.route("/newlist", methods=["GET", "POST"])
 def newlist():
@@ -303,5 +310,4 @@ def deleteconfirmation_list():
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
-        port=int(os.environ.get("PORT", "5000")),
-        debug=True)
+        port=int(os.environ.get("PORT", "5000")))

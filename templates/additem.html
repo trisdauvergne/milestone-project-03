@@ -13,7 +13,7 @@
     <div class="row row-no-gutter">
 		<div class="col-12">
 			<div class="row mylist-container">
-				<form action="{{ url_for('additem', list_id=list_items._id) }}" method="POST" class="form-left-padding">
+				<form action="{{ url_for('additem', list_id=list_items._id) }}" method="POST" class="form-left-padding newlist-width">
                     <div class="form-group">
                         <label for="list_name">List name</label>
                         <input type="text" class="form-control" id="list_name" value="{{ list_items.list_name }}" name="list_name" disabled>
@@ -23,8 +23,8 @@
                         <input type="url" class="form-control" id="product_link" placeholder="Paste a link to the item here (required)" name="product_link" required>
                     </div>
                     <div class="form-group">
-                        <label for="ima<br class="sm-linebreak"><br class="sm-linebreak"><br class="sm-linebreak"><br class="sm-linebreak"><br class="sm-linebreak"><br class="sm-linebreak"><_link">Link to image</label>
-                        <input type="url" class="form-control" id="image_link" placeholder="Right click on the image then select 'Copy image address' (required)" name="image_link">
+                        <label for="image_link">Link to image</label>
+                        <input type="url" class="form-control" id="image_link" placeholder="Right click on the image then 'Copy the image address'" name="image_link">
                     </div>
                     <div class="form-group">
                         <label for="brand_name">Brand</label>
