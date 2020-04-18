@@ -30,3 +30,76 @@ When inputting information about an item into the site, the user will also be as
 - It offers an easy journey from the site to the retailer when the user is ready to make a purhcase
 
 # WIREFRAMES
+1. Welcome / Enter:
+- [Desktop](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/wireframes/desktop_01.jpg)
+- [Tablet]
+- [Mobile]
+
+2. My Lists:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+3. Start a new list:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+4. New list added confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+5. Edit list:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+6. Edited list confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+7. List deleted confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+8. View items in a list:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+9. Add an item:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+10. List to add item to:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+11. Item added confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+12. Edit item:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+13. Item edited confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+14. Item deleted confirmation:
+- [Desktop]
+- [Tablet]
+- [Mobile]
+
+
+
+
