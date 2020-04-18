@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Document</title>
+	<title>WANT THAT</title>
 </head>
 
 <body>
@@ -18,7 +18,6 @@
 			<div class="col-12 sticky">
 				<nav class="navbar navbar-expand-md navbar-light">
 					<!-- Brand -->
-					
                     <div class="col-4">
 						<a class="navbar-logo" href="{{ url_for('mylists') }}">Want That</a>
 					</div>
@@ -37,13 +36,14 @@
 									<a class="nav-link createlist-link left-padding"
 										href="{{ url_for('newlist') }}">Create a list,</a>
 								</li>
-                                <!-- <li class="nav-item inline">
-									<a class="nav-link additem-link left-padding fix-asap"
-										href="">Add an item <strong>+</strong></a>
-								</li> -->
-                                <li class="nav-item dropdown">
+                                <li class="nav-item inline">
+									<a class="nav-link additem-link left-padding"
+										href="{{ url_for('mylists') }}">Add to a list <strong>+</strong></a>
+								</li>
+                                <!-- Can't use dropdown because it disappears in the div -->
+                                <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle left-padding additem-link fix-asap" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Add to a list
+                                    Add to a list <strong>+</strong>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     {% for items in navbar_location %}
@@ -51,7 +51,7 @@
                                         {{ items.list_name }}</a>
                                     {% endfor %}
                                     </div>
-                                </li>
+                                </li> -->
 							</ul>
 						</div>
 					</div>

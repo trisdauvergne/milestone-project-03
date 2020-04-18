@@ -14,11 +14,11 @@
             <div class="row mylist-container">       
                 <form action="{{ url_for('newlist')}}" method="POST" class="form-left-padding newlist-width">
                     <div class="form-group">
-                        <label for="formGroupExampleInput">List name</label>
+                        <label for="list_name">List name</label>
                         <input type="text" class="form-control" id="list_name" placeholder="Give your list a name (required)" name="list_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">List description</label>
+                        <label for="list_description">List description</label>
                         <input type="text" class="form-control" id="list_description" name="list_description" placeholder="Write a few words about this list" required>
                     </div>
                     <button type="submit" class="custom-button">Create List</button>
