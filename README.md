@@ -222,3 +222,12 @@ The format of this page will be the same across all screen sizes.
 - A filter feature in addition to the sort function to only show certain results
 - A 'click to buy' feature for users to make purchases through the site
 
+## Technologies used
+- HTML and CSS programming languages
+- [BootstrapCDN](https://www.bootstrapcdn.com/): [BootStrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to assist with the structuring and responsiveness of the site
+- [RapidAPI](https://rapidapi.com/) for providing the Deezer SDK and access to the Deezer API
+- [Deezer](https://rapidapi.com/deezerdevs/api/deezer-1) for the API and access to the song network
+- [Google Fonts](https://fonts.google.com/) for the fonts used throughout the page
+- [Github](https://github.com/) to store repositories of the project
+- [Gitpod](https://www.gitpod.io/) for providing the workspace where the code was written
+- [ICO Converter](https://www.icoconverter.com/) to create the tab icon
