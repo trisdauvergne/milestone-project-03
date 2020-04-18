@@ -14,6 +14,7 @@
 			<p class="list-filter-styling">Lists sorted by name</p>
 		</div>
 	</div>
+    
 	<div class="row row-no-gutter">
 		<div class="col-12">
 			{% for name in collection | sort(case_sensitive=false, attribute="list_name") %}

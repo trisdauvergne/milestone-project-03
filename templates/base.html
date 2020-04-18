@@ -17,16 +17,13 @@
 		<div class="row row-no-gutter">
 			<div class="col-12 sticky">
 				<nav class="navbar navbar-expand-md navbar-light">
-					<!-- Brand -->
                     <div class="col-4 logo-div">
 						<a class="navbar-logo" href="{{ url_for('mylists') }}">Want That</a>
 					</div>
-					<!-- Toggler/collapsibe Button -->
 					<div class="col-8">
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
                         </button>
-						<!-- Navbar links -->
 						<div class="collapse navbar-collapse" id="collapsibleNavbar">
 							<ul class="navbar-nav">
 								<li class="nav-item inline">
@@ -40,18 +37,6 @@
 									<a class="nav-link additem-link left-padding"
 										href="{{ url_for('mylists_additem') }}">Add to a list <strong>+</strong></a>
 								</li>
-                                <!-- Can't use dropdown because it disappears in the div -->
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle left-padding additem-link fix-asap" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Add to a list <strong>+</strong>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    {% for items in navbar_location %}
-                                        <a class="dropdown-item" href="{{ url_for('additem', list_id=items._id) }}">
-                                        {{ items.list_name }}</a>
-                                    {% endfor %}
-                                    </div>
-                                </li> -->
 							</ul>
 						</div>
 					</div>
