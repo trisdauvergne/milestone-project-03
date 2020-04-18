@@ -24,7 +24,7 @@ listcoll = mongo.db.wt_collection
 itemcoll = mongo.db.wt_listitems
 
 
-@app.route("/")
+@app.route("/hello")
 def hello():
     return render_template('welcomepage.html')
 
