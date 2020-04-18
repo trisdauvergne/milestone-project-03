@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:100,200,300,400,500,600,700');
 
 
 /* General */
@@ -9,38 +8,31 @@ body {
 }
 
 .newlist-width {
-    width: 25vw;
+    width: 40vw;
 }
 
 .instruction-row {
     padding: 16px 0 !important;
 }
 
-/* Bootstrap toggle icon */
+/* Remove the bootstrap toggle icon */
 .dropdown-toggle::after {
     display: none !important;
 }
 
+/* Remove default blue colour from all <a> tags */
 a {
     color: black !important;
     text-decoration: none !important;
-}
-
-.general-margin {
-    margin: 0 2%;
 }
 
 .hidden-id {
     display: none;
 }
 
+/* Remove default radius from input box */
 input {
     border-radius: 0px !important;
-}
-
-.fix-asap {
-    background-color: red;
-    color: white;
 }
 
 /* Left padding between edit button and delete button */
@@ -52,10 +44,12 @@ input {
     margin-left: 20px;
 }
 
+/* Add space above elements */
 .padding-top {
     margin-top: 16px;
 }
 
+/* Standard button to submit */
 .custom-button {
     border: 4px solid black;
     font-weight: 500;
@@ -79,11 +73,49 @@ input {
     padding: 0;
 }
 
-/* Welcome Page */
+/* Header Row */
+.header-row {
+    margin-left: 33%;
+    margin-top: 16px;
+}
+
+/* Navbar elements */
+.navbar {
+    color: black;
+    border-bottom: 4px solid black;
+    padding-left: 0px !important;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.navbar-logo {
+    color:black;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 5%;
+}
+
+.nav-link {
+    font-size: 25px;
+    font-weight: 500;
+    color: black !important;
+    padding-left: 0px !important;
+}
+
+.navbar-container {
+    display: inline-block;
+}
+
+/*------------------------------------------------- Welcome Page */
 
 .homepage-top-left {
     height: 30vh;
-    /* border-right: solid black 4px; */
     border-bottom: solid black 4px;
 }
 
@@ -133,7 +165,7 @@ input {
     margin-top: 16px;
 }
 
-/* Mylists Page */
+/*------------------------------------------------- My Lists Page */
 
 .mylist-container {
     border-bottom: 4px solid black;
@@ -152,23 +184,20 @@ input {
     font-size: 20px;
 }
 
-/* List Items Page */
+/*------------------------------------------------- List Items Page */
+
 .items-container {
     border-bottom: 4px solid black;
     font-size: 25px;
     font-weight: 500;
-    /* padding-top: 16px;
-    padding-bottom: 16px; */
 }
 
 .item-image {
     max-height: 30vh;
     object-fit: contain;
-    /* border: solid black 4px; */
     margin-right: 2vw;
     border-right: solid black 4px;
     border-left: solid black 4px;
-
 }
 
 .image-container {
@@ -193,7 +222,7 @@ input {
 }
 
 .listitems-left-padding {
-    margin-left: 16px !important;
+    margin-left: 16px;
 }
 
 .click-text {
@@ -206,63 +235,14 @@ input {
     text-decoration: underline !important; 
 }
 
-/* .footer {
-    position: fixed;
-    bottom: 0;
-    background-color: white;
-    width: 100%;
-    border-top: solid 4px black;
-}
-
-.bottom-margin {
-    margin-bottom: 50px;
-} */
-
-/* Header Row */
-.header-row {
-    margin-left: 33%;
-    margin-top: 16px;
-}
+/*------------------------------------------------- New List Page */
 
 /* Form additional padding on newlist and add items pages */
 .form-left-padding {
     padding-left: 16px;
 }
 
-/* Navbar elements for bootstrap  */
-.navbar {
-    color: black;
-    border-bottom: 4px solid black;
-    padding-left: 0px !important;
-}
-
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1;
-}
-
-.navbar-logo {
-    color:black;
-    font-size: 25px;
-    font-weight: 500;
-    margin-left: 5%;
-}
-
-.nav-link {
-    font-size: 25px;
-    font-weight: 500;
-    color: black !important;
-    padding-left: 0px !important;
-}
-
-.navbar-container {
-    display: inline-block;
-}
-
-/* Hover and active colours */
+/*------------------------------------------------- Colors for hover page */
 
 .navbar-logo:hover {
     background-color: #f5489a;
@@ -364,17 +344,19 @@ input {
     background-color: white;
 }
 
-/* -----------------------------Media Queries---------------- */
+
+/*------------------------------------------------- Media Queries */
 
 /* General */
+
 @media only screen and (max-width: 425px) {
     .header-row {
-        padding: 5%;
+        padding-left: 2vw;
         margin: 0;
     }
 }
 
-/* Welcome page */
+/*------------------------------------------------- Welcome Page */
 
 /* Below tablet size */
 @media only screen and (max-width: 767px) {
@@ -383,7 +365,7 @@ input {
       margin: 0 0 0 0;
   }
 
-  /* Color replacing hover color pops */
+  /* Underline colors replacing hover colors */
     .mylists-link {
         text-decoration: underline !important;
         text-decoration-color: #feeb2b !important;
@@ -442,9 +424,8 @@ input {
     .list-name {
         text-decoration: underline !important;
         text-decoration-color: #fdb8d4 !important;
+    }
 }
-}
-
 
 @media only screen and (max-width: 600px) {
     /* Text on intro page reducing in size */
@@ -470,14 +451,7 @@ input {
     }
 }
 
-/* My Lists page */
-
-@media only screen and (max-width: 768px) {
-    /* Coloured background for heading */
-    /* .mylist-sm-screen {
-        background-color: #feeb2b;
-    } */
-}
+/*------------------------------------------------- My Lists Page */
 
 /* Small screen line breaks hidden */
 .sm-linebreak {
@@ -511,20 +485,23 @@ input {
     }
 }
 
-/* List Items Page */
+/*------------------------------------------------- List Items Page */
+
 @media only screen and (max-width: 768px) {
+    /* Updating height in smaller screens */
     .item-image {
-        max-height: 30vh;
+        height: 30vh;
+        object-fit: cover;
     }
 }
 
 @media only screen and (max-width: 425px) {
-
     /* Left margin between sort buttons */
     .left-padding-sm {
         margin: 0px;
     }
 
+    /* Smaller text in smaller screens */
     .list-items {
         font-size: 16px;
         margin: 8px 0;
@@ -532,5 +509,31 @@ input {
 
     .list-items-sm-padding {
         padding-right: 5%;
+    }
+
+    .listitems-left-padding {
+        margin-left: 0px;
+    }
+
+    .sm-linebreak {
+        display: block;
+    }
+}
+
+/*------------------------------------------------- Add Items Page */
+
+@media only screen and (max-width: 425px) {
+    /* Form width */
+    .form-left-padding {
+        padding-right: 16px;
+    }
+}
+
+/*------------------------------------------------- New list Page */
+
+@media only screen and (max-width: 425px) {
+    /* Form width */
+    .newlist-width {
+        width: 100%;
     }
 }
