@@ -4,7 +4,7 @@
 
 <div class="container-fluid full-width">
     <div class="row row-no-gutter">
-		<div class="col-12 mylist-container"> 
+		<div class="col-12 mylist-container mylist-sm-screen"> 
             <p class="header-row">{{ list_items.list_name }} items list</p>
         </div>
 	</div>
@@ -22,11 +22,11 @@
 		<div class="col-12 bottom-margin">
             {% for item in list_items['items'] %}
             <div class="row items-container">
-                <div class="col-4 image-container">
+                <div class="col-sm-4 col-5 image-container">
                     <img src="{{ item.image_link }}" align="right" class="item-image" alt="preview of item in shopping list">
                 </div>
-                <div class="col-8 list-items">
-                    <div class="col-12">
+                <div class="col-sm-8 col-7">
+                    <div class="col-12 list-items list-items-sm-padding">
                         <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price }} SEK</p>

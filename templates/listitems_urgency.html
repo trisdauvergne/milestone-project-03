@@ -21,10 +21,10 @@
 		<div class="col-12">
             {% for item in list_items['items'] | sort(case_sensitive=false, attribute="need_rating") %}
             <div class="row items-container">
-                <div class="col-4 image-container">
+                <div class="col-sm-4 col-5 image-container">
                     <img src="{{ item.image_link }}" align="right" class="item-image" alt="preview of item in shopping list">
                 </div>
-                <div class="col-8 list-items">
+                <div class="col-sm-8 col-7 list-items">
                     <div class="col-12">
                         <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
                         <p class="padding-top">{{ item.item_description }}</p>

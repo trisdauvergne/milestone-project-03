@@ -162,7 +162,7 @@ input {
 }
 
 .item-image {
-    max-height: 29vh;
+    max-height: 30vh;
     object-fit: contain;
     /* border: solid black 4px; */
     margin-right: 2vw;
@@ -364,3 +364,173 @@ input {
     background-color: white;
 }
 
+/* -----------------------------Media Queries---------------- */
+
+/* General */
+@media only screen and (max-width: 425px) {
+    .header-row {
+        padding: 5%;
+        margin: 0;
+    }
+}
+
+/* Welcome page */
+
+/* Below tablet size */
+@media only screen and (max-width: 767px) {
+  /* Links and buttons removing left margins */
+    .createlist-link, .left-padding {
+      margin: 0 0 0 0;
+  }
+
+  /* Color replacing hover color pops */
+    .mylists-link {
+        text-decoration: underline !important;
+        text-decoration-color: #feeb2b !important;
+    }
+
+    .additem-link {
+        text-decoration: underline !important;
+        text-decoration-color: #01a1e3 !important;
+    }
+
+    .createlist-link {
+        text-decoration: underline !important;
+        text-decoration-color: #fdb8d4 !important;
+    }
+
+    .edit-button {
+        text-decoration: underline !important;
+        text-decoration-color: #6cb456 !important;
+    }
+
+    .delete-button {
+        text-decoration: underline !important;
+        text-decoration-color: #fa5453 !important;
+    }
+
+    .filter-button-1 {
+        text-decoration: underline !important;
+        text-decoration-color: #af79cd !important;
+    }
+
+    .filter-button-2 {
+        text-decoration: underline !important;
+        text-decoration-color: #6cb456 !important;
+    }
+
+    .filter-button-3 {
+        text-decoration: underline !important;
+        text-decoration-color: #feeb2b !important;
+    }
+
+    .website-link {
+        text-decoration: underline !important;
+        text-decoration-color: #01a1e3 !important;
+    }
+
+    .navbar-logo {
+        text-decoration: underline !important;
+        text-decoration-color: #f5489a !important;
+    }
+
+    .start-button-text {
+        text-decoration: underline !important;
+        text-decoration-color: #f5489a !important;
+    }
+
+    .list-name {
+        text-decoration: underline !important;
+        text-decoration-color: #fdb8d4 !important;
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* Text on intro page reducing in size */
+    .intro-copy {
+        font-size: 16px;
+    }
+
+    /* Start button on welcome page */
+    .start-button-text {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    /* Logo no margins on small mobile */
+    .navbar-logo {
+        margin-left: 0px;
+    }
+
+    .logo-div {
+        width: 80%;
+        padding-left: 2vw !important;
+    }
+}
+
+/* My Lists page */
+
+@media only screen and (max-width: 768px) {
+    /* Coloured background for heading */
+    /* .mylist-sm-screen {
+        background-color: #feeb2b;
+    } */
+}
+
+/* Small screen line breaks hidden */
+.sm-linebreak {
+    display: none;
+}
+
+@media only screen and (max-width: 620px) {
+    .mylist-container {
+        padding: 16px 16px 16px 20%; 
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /* Spacing around list and items info */
+    .mylist-container {
+        padding: 5%;
+    }
+
+    .list-filter-styling {
+        padding: 5%;
+        margin: 0;
+    }
+
+    /* Line breaks appearing in small screen */
+    .sm-linebreak {
+        display: block;
+    }
+
+    .sm-button-style {
+        font-size: 20px;
+    }
+}
+
+/* List Items Page */
+@media only screen and (max-width: 768px) {
+    .item-image {
+        max-height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    /* Left margin between sort buttons */
+    .left-padding-sm {
+        margin: 0px;
+    }
+
+    .list-items {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .list-items-sm-padding {
+        padding-right: 5%;
+    }
+}
