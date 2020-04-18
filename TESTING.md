@@ -236,7 +236,7 @@ The format of this page will be the same across all screen sizes.
 
 ## Testing
 
-Testing information can be found in the separate testing file, which can be accessed[here]().
+Testing information can be found in the separate testing file, which can be accessed[here](https://github.com/trisdauvergne/milestone-project-03/blob/master/TESTING.md).
 
 ## Deployment
 
@@ -269,7 +269,7 @@ Follow the below steps to clone this project from Github:
 
 ### Content
 - Copy for the site has been written by Tristan Dauvergne
-- All artist and song data has called from the [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1) 
+- Product information on the site is based on information from external retailers' sites
 
 ### Media
 - Images on welcome page by Mike Von on Unplash
