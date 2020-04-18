@@ -236,3 +236,50 @@ The format of this page will be the same across all screen sizes.
 
 ## Testing
 
+Testing information can be found in the separate testing file, which can be accessed[here]().
+
+## Deployment
+
+This project was developed using the [Gitpod](https://www.gitpod.io/) IDE, commited to Git and pushed to Github using its built in function.
+
+The following steps were taken to deploy this page from its [Github](https://github.com/trisdauvergne/milestone-project-02) repository to Github pages:
+
+1. Log into [GitHub](https://github.com/)
+2. Select trisdauvergne/milestone-project-02 from the list of repositories
+3. Select 'Settings' from the row of menu items on screen
+4. Scroll down to the 'Github Pages' section
+5. Under 'Source', click the drop down menu and select 'Master Branch'
+6. The page is automatically refreshed and the website is now deployed
+7. The link can now be found in the same 'Github Pages' section after 'Your page is now published at...'
+
+At the moment of submitting this Milestone project the Development Branch and Master Branch are identical.
+
+## To run this project locally
+
+Follow the below steps to clone this project from Github:
+
+1. Go to the project repository [here](https://github.com/trisdauvergne/milestone-project-03)
+2. Look for the green button on the right hand side of the page that says 'Clone or Download' (you may need to scroll down slightly to see it)
+3. Copy and paste the link in the box
+4. Open Terminal
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type git clone, and then paste the URL you copied in Step 2.
+> git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+7. Press Enter. Your local clone will be created.
+
+### Content
+- Copy for the site has been written by Tristan Dauvergne
+- All artist and song data has called from the [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1) 
+
+### Media
+- Images on welcome page by Mike Von on Unplash
+- Images used in the lists are linked directly to the retailers' websites
+
+### Acknowledgments
+This site has been built as my Milestone Project 3 to demonstrate an understanding of Python, object-oriented programming, Flask, non-relational databases and non-relational data modelling. I selected a fashion related shopping app for the following reasons:
+1. I had myself in mind when designing this and it is now serving me well as a place to store links to various retailers. I am a frequent online shopper and felt I understood how to make this serve a purpose effectively
+2. Online shopping, what customers expecting and how people shop online is something I am fascinated by and keen to explore further
+
+The design inspiration from this site comes from many places including typographic posters, book layouts and modern culture.
+
+I have been guided through this project by my mentor Brian Macharia who has given me professional guidance to improve the UX of this site.
