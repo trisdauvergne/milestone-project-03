@@ -122,19 +122,29 @@ There is a **header row**, which indicates to the user which page they are on.
 
 There is also a feature to **sort lists alphabetically**, which when clicked displays list results in alphabetical order. 
 
+The stacked format of this page will be the same across all screen sizes. 
+
 ## Create A List Page
-When the user clicks on 'Create a list' in the navbar it takes them to a **form** where they can create a new list. The user must simply enter a name and provide a description. Both **input fields** are required and the form won't submit without these values. Beneath the form is a **create list** button. When clicked, the site **provides confirmation** on a new page that a new list has been made and invites the user to **go back** to lists where they can add items to lists.
+When the user clicks on 'Create a list' in the navbar it takes them to a **form** where they can create a new list. The user must simply enter a name and provide a description. Both input fields are required and the form won't submit without these values. Beneath the form is a **create list** button. When clicked, the site provides confirmation on a **confirmation page** that a new list has been made and invites the user to **go back** to lists where they can add items to lists.
+
+The format and layout of this page will be the same across all screen sizes. 
 
 ## Add To List
-Users can add to lists through multiple ways. They can click on **Add to a list +** in the navbar, or click **Add to this list** underneath the list descriptions on the 'My lists' page, or they can click on **Add to this list** at the bottom of the list items page. Each option takes them to the same page where they can input list information into a **form**. The list name in the form is **prepopulated** from the database. The user must paste a link to the product and also a link to the image from the retailer's site. They can type in the brand name and select from the **predefined product types** which will both be combined to form the heading of the item in the list items page. The user must fill in the description and price, which must be a number. They are then asked to consider **'how much do I need this?'**  and their finances and the environment. The aim of encouraging responsible spending and minimising environmental impact. 
+Users can add to lists through multiple ways. They can click on **Add to a list +** in the navbar, or click **Add to this list** underneath the list descriptions on the 'My lists' page, or they can click on **Add to this list** at the bottom of the list items page. Each option takes them to the same page where they can input list information into a form. The list name in the form is **prepopulated** from the database. The user must paste a link to the product and also a link to the image from the retailer's site. They can type in the brand name and select from the **predefined product types** which will both be combined to form the heading of the item in the list items page. The user must fill in the description and price, which must be a number. They are then asked to consider **'how much do I need this?'**  and their finances and the environment. The aim of encouraging responsible spending and minimising environmental impact. 
 
-The user can then click the **add item** button at the bottom of the form which takes them to a confirmation page. On the **confirmation page**, the user is given the option to **add another item** to the list, which will repeat the process, or to **view the list** (with the list name populated from the database).
+The user can then click the **add item** button at the bottom of the form which takes them to a confirmation page. On the confirmation page, the user is given the option to **add another item** to the list, which will repeat the process, or to **view the list** (with the list name populated from the database).
+
+The format of these pages will be the same across all screen sizes.
 
 ## Edit List
 The user is able to edit a list by clicking on **Edit list** on the 'My lists' page. This will take them to a page where they can change the name of the list and the description. When the user clicks the **button** they are taken to a page confirming the list has been edited. They are given the option to **view items in the list**, with the list name populated from the database. When clicked, this will take the user back to the list and show all the items within it.
 
+The format of this page will be the same across all screen sizes.
+
 ## Delete List
-When the user clicks **delete list** on the 'My lists' page this deletes the list. The user then receives confirmation that the list has been deleted. On the confirmation page, the user is given the option to **go back to lists** where the remaining lists will be displayed.  
+When the user clicks **delete list** on the 'My lists' page this deletes the list. The user then receives confirmation that the list has been deleted. On the confirmation page, the user is given the option to **go back to lists** where the remaining lists will be displayed. 
+
+The format of this page will be the same across all screen sizes. 
 
 ## List Items Page
 If the user clicks on a list name in the 'My lists' page, a **list display** of all the items within that list will appear on a new page. The **name of the list** will appear at the top of the page, beneath the nav bar. There will be 3 options beneath the list name that will allow the user to sort items by **brand name**, by **price** and by **urgency**.
@@ -145,5 +155,59 @@ At the bottom of the page the user can **add to this list**, which will take the
 
 If the user clicks on sort items by brand name, it will open a new page and show results in alphabetical order. If the user clicks on sort by price, it will show the results in ascending order. If the user clicks on sort by urgency, it will show the most urgent results first. 
 
+The format of this page will be roughly the same across all screen sizes. On a mobile sized screen however, the images will bleed off the edge of the screen rather than having negative space to their left as on larger screens. 
+
 ## Delete Item
 If the user clicks on **delete item** on the list items page, this will delete that item. The user will then be taken to a confirmation page where they will be given the option to **Go back to list** with the list name populated from the database. 
+
+The format of this page will be the same across all screen sizes. 
+
+### Existing features
+
+#### Every page
+- **Navigation bar** on every page, allowing the user to easily navigate across the site
+- **'WANT THAT' logo** to take the user back to the welcome page if desired
+- **View 'My lists'** option so the user can easily see all existing lists
+- **Create a new list** to easily allow the user to create a new list
+- **Add an item** to encourage the user to add items to existing lists
+- **Sticky** navbar, so the key features of the site are always visible to the user 
+- **Active links** to give the user alternative ways to easily navigate through the site  
+- **Hover effects** to indicate to the user which elements are active 
+#### Welcome Page
+- **Enter** button to allow the user to enter the page
+#### My Lists Page
+- **List name** in the list results is populated from the database and is also an active link that will take the user to the list items page if clicked
+- **Description** is populated from the database and will help the user remember the subject of the list
+- **Add to the list** will easily allow the user to add an item to the list 
+- **Edit list** will easily allow the user to edit the name and / or description of the list
+- **Delete list** an easy way for the user to remove this list and its contents from the database
+- **Header row** to provide the user with reassurance on which page they are currently on
+- **Sort lists alphabetically** to aid the user in identifying a list 
+#### Create A List Page
+- **Form** to allow the user to input a list name and description, enabling them to identify the list later
+- **Confirmation page** which validates the user's actions for adding, editing and deleting items across the site 
+#### Add To List Functions
+- **Add to a list** and **Add to this list** allows the user to easily add an item to a list. The user is able to add to a list through the navbar on the 'My Lists' page and at the bottom of the list items page to encourage list building
+- **Prepopulated** information such as list names and item names in page header rows improve accessibility and provide reassurance for users as to which steps they are following 
+- **Predefined product types** in forms take out some of the thinking for the user 
+- The **'how much do I need this?'** question is aimed to cause the user to think about their spending, to consider their own finances and also to consider the environment and the impact that unnecessary deliveries and fast-fashion cause the environment
+- Users can also click on **add another item** on the confirmation page after an item has been added. This is another quick and easy way for the user to fulfill their mission on the site
+- **View the list** on the confirmation page after addint an item allows the user to easily review their additions. The name of the list will be populated from the database 
+#### Edit List
+- The user can easily edit the name and description of a list by clicking on **Edit list** on the My Lists page
+- When the list information has been edited, the user is invited to **view items in the list** to go to the list items page, with the list name populated from the database
+#### Delete list
+- **Delete list** will delete a list and all its contents. The user can do this from the 'My Lists' page and at the bottom of the list items page
+- **Go back to lists** will show up after the delete list function
+#### List Items Page
+- **List display** of all items in a list in a clear, easy to read, stacked format
+- **Name of the list** in the header will be populated from the database
+- Sort by **brand name** will display results alphabetically by brand in a new page
+- Sort by **price** will display results in a new page, according to cheapest first 
+- Sort by **urgency** will display results in a new page, according to how much the user stated they needed the product
+- The **image** of each product will be displayed using the link to image the user input
+- The **heading** will be formed of the brand name the user input, as well as the product type the user selected. This will be a link to the product page that the user input as the link to product
+- **Edit item** will sit in each item row and allow the user to easily edit the item in the list
+- **Delete item** will delete the item in the list
+- **Add to this list** at the bottom of the items list page will allow the user to add a new item to the list
+- **Delete the list** at the bottom of the list items page will delete the entire list and its contents

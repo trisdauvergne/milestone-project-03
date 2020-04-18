@@ -388,7 +388,7 @@ input {
       border-top: none;
       border-left: none;
       height: 65vh;
-      background-size: 100% auto;
+      background-size: cover;
       background-repeat: no-repeat;
       background-image: url("/static/images/mike-von-QW9FrzPj70U-unsplash.jpg");
   }
