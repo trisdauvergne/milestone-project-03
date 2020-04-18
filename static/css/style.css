@@ -194,8 +194,8 @@ input {
 
 /* Header Row */
 .header-row {
-    padding-left: 33%;
-    padding-top: 16px;
+    margin-left: 33%;
+    margin-top: 16px;
 }
 
 /* Form additional padding on newlist and add items pages */
@@ -240,27 +240,18 @@ input {
 
 .navbar-logo:hover {
     background-color: #f5489a;
-    /* padding: 2px; */
 }
 
 .navbar-logo:active {
-    background-color: #f5489a;
-    /* padding: 2px; */
-    color: white !important;
+    background-color: white;
 }
 
 .mylists-link:hover {
     background-color: #feeb2b;
 }
 
-.navyellow {
-    display: none;
-    background-color: yellow;
-}
-
 .mylists-link:active {
-    background-color: #feeb2b;
-    color: white !important;
+    background-color: white;
 }
 
 .createlist-link:hover {
@@ -268,17 +259,15 @@ input {
 }
 
 .createlist-link:active {
-    background-color: #fdb8d4;
-    color: white !important;
+    background-color: white;
 }
 
-.additem-link:hover, .add-item:hover {
+.additem-link:hover {
     background-color: #01a1e3;
 }
 
 .additem-link:active {
-    background-color: #01a1e3;
-    color: white !important;
+    background-color: white;;
 }
 
 .edit-button:hover {

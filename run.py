@@ -57,7 +57,7 @@ def newlist():
     navbar_collection=mongo.db.wt_collection.find()
     if request.method == 'GET':
         return render_template('newlist.html',
-                                navbar_location=navbar_collection)
+                               navbar_location=navbar_collection)
 
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -69,7 +69,17 @@ def newlist():
 
         listcoll.insert_one(newly_added_list)
 
-    return redirect(url_for('mylists'))
+    return render_template('listadded.html',
+                           navbar_location=navbar_collection)
+
+
+# When a list is created
+@app.route("/listadded")
+def listadded():
+    navbar_collection=mongo.db.wt_collection.find()
+
+    return render_template('listadded.html',
+                           navbar_location=navbar_collection)
 
 
 # Function to edit a list

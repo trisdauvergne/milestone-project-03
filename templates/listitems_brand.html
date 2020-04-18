@@ -30,8 +30,8 @@
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price|int }} SEK</p>
                         <p>Urgency: {{ item.need_rating }}</p>
-                        <a href="" class="edit-button">Edit Item,</a>
-                        <a href="" class="delete-button left-padding">Delete Item</a>
+                        <a href="{{ url_for('edititem', list_id=list_items._id,item_id=item._id) }}" class="edit-button">Edit Item,</a>
+                        <a href="{{ url_for('deleteitem', list_id=list_items._id, item_id=item._id) }}" class="delete-button left-padding">Delete Item</a>
                     </div>
                 </div>
             </div>
