@@ -2,7 +2,7 @@
 
 # WANT that
 
-View the project on Githu pages here xxxxxxxxxxxxx
+View the project on Heroku [here](https://want-that-ms3.herokuapp.com/)
 
 ## An introduction to the project
 
@@ -122,5 +122,19 @@ There is a **header row**, which indicates to the user which page they are on.
 
 There is also a feature to **sort lists alphabetically**, which when clicked displays list results in alphabetical order. 
 
-## Create a list page
-When the user clicks on 'Create a list' in the navbar it takes them to a **form** where they can create a new list. The user must simply enter a name and provide a description. Both **input fields** are required and the form won't submit without these values. Beneath the form is a **create list** button. When clicked, the user is taken to 
+## Create A List Page
+When the user clicks on 'Create a list' in the navbar it takes them to a **form** where they can create a new list. The user must simply enter a name and provide a description. Both **input fields** are required and the form won't submit without these values. Beneath the form is a **create list** button. When clicked, the site **provides confirmation** on a new page that a new list has been made and invites the user to **go back** to lists where they can add items to lists.
+
+## Add To List
+Users can add to lists through multiple ways. They can click on **Add to a list +** in the navbar, or click **Add to this list** underneath the list descriptions on the 'My lists' page, or they can click on **Add to this list** at the bottom of the list items page. Each option takes them to the same page where they can input list information into a **form**. The list name in the form is **prepopulated** from the database. The user must paste a link to the product and also a link to the image from the retailer's site. They can type in the brand name and select from the **predefined product types** which will both be combined to form the heading of the item in the list items page. The user must fill in the description and price, which must be a number. They are then asked to consider **'how much do I need this?'**  and their finances and the environment. The aim of encouraging responsible spending and minimising environmental impact. 
+
+The user can then click the **add item** button at the bottom of the form which takes them to a confirmation page. On the **confirmation page**, the user is given the option to **add another item** to the list, which will repeat the process, or to **view the list** (with the list name populated from the database).
+
+## Edit List
+The user is able to edit a list by clicking on **Edit list** on the 'My lists' page. This will take them to a page where they can change the name of the list and the description. When the user clicks the **button** they are taken to a page confirming the list has been edited. They are given the option to **view items in the list**, with the list name populated from the database. When clicked, this will take the user back to the list and show all the items within it.
+
+## Delete List
+When the user clicks **delete list** on the 'My lists' page this deletes the list. The user then receives confirmation that the list has been deleted. On the confirmation page, the user is given the option to **go back to lists** where the remaining lists will be displayed.  
+
+## List Items Page
+If the user clicks on a list name in the 'My lists' page, a **list display** of all the items within that list will appear on a new page. The **name of the list** will appear at the top of the page, beneath the nav bar. Beneath this will be options for the user to sort the list  
