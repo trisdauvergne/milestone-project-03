@@ -28,3 +28,5 @@ When inputting information about an item into the site, the user will also be as
 - The site will allow users to edit and delete lists, as well as editing and deleting the items contained within the lists
 - The site allows users to easily reference items, navigating through lists and with visual references from images and user generated descriptions
 - It offers an easy journey from the site to the retailer when the user is ready to make a purhcase
+
+# WIREFRAMES

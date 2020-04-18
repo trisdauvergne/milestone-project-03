@@ -149,10 +149,21 @@ input {
 }
 
 .intro-copy {
-    margin: 2% 0 0 5%;
-    font-size: 20px;
-    line-height: 200%;
+    font-size: 4vw;
+    font-weight: 600;
+    padding: 2% 5% 0 5%;
+}
+
+.intro-body {
+    font-size: 3vw;
     font-weight: 500;
+    padding: 2% 5% 0 5%;
+}
+
+.intro-body-2 {
+    font-size: 2vw;
+    font-weight: 500;
+    padding: 0 5% 0 5%;
 }
 
 .start-button {
@@ -162,7 +173,7 @@ input {
     align-items: center;
     justify-content: center;
     vertical-align: baseline;
-    margin-top: 16px;
+    padding-bottom: 0px;
 }
 
 /*------------------------------------------------- My Lists Page */
@@ -365,77 +376,50 @@ input {
       margin: 0 0 0 0;
   }
 
-  /* Underline colors replacing hover colors */
-    .mylists-link {
-        text-decoration: underline !important;
-        text-decoration-color: #feeb2b !important;
-    }
+  .homepage-top-right, .homepage-bottom-left {
+      display: none;
+  }
 
-    .additem-link {
-        text-decoration: underline !important;
-        text-decoration-color: #01a1e3 !important;
-    }
+  .homepage-top-left {
+      height: 35vh;
+  }
 
-    .createlist-link {
-        text-decoration: underline !important;
-        text-decoration-color: #fdb8d4 !important;
-    }
+  .homepage-bottom-right {
+      border-top: none;
+      border-left: none;
+      height: 65vh;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-image: url("/static/images/mike-von-QW9FrzPj70U-unsplash.jpg");
+  }
 
-    .edit-button {
-        text-decoration: underline !important;
-        text-decoration-color: #6cb456 !important;
-    }
-
-    .delete-button {
-        text-decoration: underline !important;
-        text-decoration-color: #fa5453 !important;
-    }
-
-    .filter-button-1 {
-        text-decoration: underline !important;
-        text-decoration-color: #af79cd !important;
-    }
-
-    .filter-button-2 {
-        text-decoration: underline !important;
-        text-decoration-color: #6cb456 !important;
-    }
-
-    .filter-button-3 {
-        text-decoration: underline !important;
-        text-decoration-color: #feeb2b !important;
-    }
-
-    .website-link {
-        text-decoration: underline !important;
-        text-decoration-color: #01a1e3 !important;
-    }
-
-    .navbar-logo {
-        text-decoration: underline !important;
-        text-decoration-color: #f5489a !important;
-    }
-
-    .start-button-text {
-        text-decoration: underline !important;
-        text-decoration-color: #f5489a !important;
-    }
-
-    .list-name {
-        text-decoration: underline !important;
-        text-decoration-color: #fdb8d4 !important;
-    }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     /* Text on intro page reducing in size */
+    
     .intro-copy {
-        font-size: 16px;
+        font-size: 5vh;
+        font-weight: 600;
+        padding: 5% 5% 0 5%;
+    }
+
+    .intro-body {
+        font-size: 2.5vh;
+        font-weight: 500;
+        padding: 2% 5% 0 5%;
+    }
+
+    .intro-body-2 {
+        font-size: 3vh;
+        font-weight: 600;
+        padding: 0 5% 0 5%;
+        color: white;
     }
 
     /* Start button on welcome page */
     .start-button-text {
-        font-size: 50px;
+        font-size: 75px;
+        margin-top: 5vh;
+        color: white;
     }
 }
 
@@ -536,5 +520,69 @@ input {
     /* Form width */
     .newlist-width {
         width: 100%;
+    }
+}
+
+/*------------------------------------------------- Underlines and colors */
+
+/* Underline colors replacing hover colors */
+    .mylists-link {
+        text-decoration: underline !important;
+        text-decoration-color: #feeb2b !important;
+    }
+
+    .additem-link {
+        text-decoration: underline !important;
+        text-decoration-color: #01a1e3 !important;
+    }
+
+    .createlist-link {
+        text-decoration: underline !important;
+        text-decoration-color: #fdb8d4 !important;
+    }
+
+    .edit-button {
+        text-decoration: underline !important;
+        text-decoration-color: #6cb456 !important;
+    }
+
+    .delete-button {
+        text-decoration: underline !important;
+        text-decoration-color: #fa5453 !important;
+    }
+
+    .filter-button-1 {
+        text-decoration: underline !important;
+        text-decoration-color: #af79cd !important;
+    }
+
+    .filter-button-2 {
+        text-decoration: underline !important;
+        text-decoration-color: #6cb456 !important;
+    }
+
+    .filter-button-3 {
+        text-decoration: underline !important;
+        text-decoration-color: #feeb2b !important;
+    }
+
+    .website-link {
+        text-decoration: underline !important;
+        text-decoration-color: #01a1e3 !important;
+    }
+
+    .navbar-logo {
+        text-decoration: underline !important;
+        text-decoration-color: #f5489a !important;
+    }
+
+    /* .start-button-text {
+        text-decoration: underline !important;
+        text-decoration-color: #f5489a !important;
+    } */
+
+    .list-name {
+        text-decoration: underline !important;
+        text-decoration-color: #fdb8d4 !important;
     }
 }
