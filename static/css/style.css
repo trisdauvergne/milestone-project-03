@@ -193,7 +193,7 @@ input {
 }
 
 .item-image {
-    max-height: 30vh;
+    max-height: 29vh;
     object-fit: contain;
     margin-right: 2vw;
     border-right: solid black 4px;
@@ -491,6 +491,7 @@ input {
     /* Updating height in smaller screens */
     .item-image {
         height: 30vh;
+        width: 40vw;
         object-fit: cover;
     }
 }
