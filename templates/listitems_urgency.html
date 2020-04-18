@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-8 list-items">
                     <div class="col-12">
-                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}</a>
+                        <a target="_blank" href="{{ item.product_link }}" class="padding-top website-link">{{ item.brand_name }} {{ item.product_type }}<span class="click-text"> (Click to go to site)</a>
                         <p class="padding-top">{{ item.item_description }}</p>
                         <p>{{ item.item_price|int }} SEK</p>
                         <p>Urgency: {{ item.need_rating }}</p>

@@ -148,6 +148,10 @@ input {
     padding-left: 33%;
 }
 
+.description {
+    font-size: 20px;
+}
+
 /* List Items Page */
 .items-container {
     border-bottom: 4px solid black;
@@ -190,6 +194,12 @@ input {
 
 .listitems-left-padding {
     margin-left: 16px !important;
+}
+
+.click-text {
+    font-size: 20px;
+    font-weight: 200;
+    color: #D4D4D4
 }
 
 /* Header Row */
@@ -274,39 +284,67 @@ input {
     background-color: #6cb456;
 }
 
+.edit-button:active {
+    background-color: white;
+}
+
 .delete-button:hover {
     background-color: #fa5453;
+}
+
+.delete-button:active {
+    background-color :white;
 }
 
 .filter-button-1:hover {
     background-color: #af79cd;
 }
 
+.filter-button-1:active {
+    background-color: white;
+}
+
 .filter-button-2:hover {
     background-color: #6cb456;
+}
+
+.filter-button-2:active {
+    background-color: white;
 }
 
 .filter-button-3:hover {
     background-color: #feeb2b;
 }
 
+.filter-button-3:active {
+    background-color: white;
+}
+
 .list-name:hover {
     background-color:#fdb8d4;
+}
+
+.list-name:active {
+    background-color:white;
 }
 
 .custom-button:hover {
     background-color: #6cb456;
 }
 
-.website-link:hover {
-    background-color:#01a1e3;
+.custom-button:active {
+    background-color: white;
 }
 
-.add-to-list:hover {
+.website-link:hover {
     background-color:#01a1e3;
 }
 
 .start-button-text:hover {
     background-color: #f5489a;
+}
+
+.start-button-text:active {
+    background-color: white;
 }
 
