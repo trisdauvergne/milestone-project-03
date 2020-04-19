@@ -235,8 +235,10 @@ The format of this page will be the same across all screen sizes.
 - [Heroku](https://www.heroku.com/) for hosting the deployed app
 
 ## Testing
-
 Testing information can be found in the separate testing file which can be accessed [here](https://github.com/trisdauvergne/milestone-project-03/blob/00d1baa9a31a3c0238660b9be2836eee7824d2c7/TESTING.md).
+
+## Data structure
+The data for this project is stored within 1 x collection with the data schema visualised here. 
 
 ## Credits
 
