@@ -277,6 +277,7 @@ Further documentation on deploying to Heroku with Git can be found [here](https:
 ### Content
 - Copy for the site has been written by Tristan Dauvergne
 - Copy written within the item rows has been created based on information from linked external online retailers 
+- Bootstrap templates were used for the [navbar](https://getbootstrap.com/docs/4.0/components/navbar/#brand), [forms](https://getbootstrap.com/docs/4.0/components/forms/#form-controls) and for Bootstrap's responsive grid system
 
 ### Media
 - Cover images by Mike Von on [Unsplash](https://unsplash.com/@thevoncomplex)
