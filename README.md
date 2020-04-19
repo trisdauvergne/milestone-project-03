@@ -223,7 +223,7 @@ The format of this page will be the same across all screen sizes.
 
 ## Technologies used
 - HTML, CSS and Python programming languages
-- [MongoDB](https://account.mongodb.com/account/login?signedOut=true) for storing databases
+- [MongoDB](https://account.mongodb.com/account/login?signedOut=true) for storing the database
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) microframework for building the web application
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 - [PyMongo](https://pymongo.readthedocs.io/en/stable/) for tools to work with MongoDB

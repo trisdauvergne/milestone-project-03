@@ -64,11 +64,10 @@
 ### My Lists page:
 - Check that list names are loaded on the page with a description underneath them and options to add to the list, edit list and delete list
 - Click 'sort lists alphabetically' to check that the lists become displayed in alphabetical order by list name 
-- Check that these options become stackable on a mobile sized screen
 - Check that when the 'add to the list' button is clicked, it goes to the add item page
 - Check that when the 'edit list' button is clicked, it goes to the edit list page
 - Check that when 'delete list' is clicked, a confirmation page appears saying the list has been deleted
-- Check the row elements in this page remain stacked on all screen sizes and that the three option buttons also become stacked
+- Check the row elements in this page remain stacked on all screen sizes
 
 ### Create A List page:
 - Input information into form and check that form won't submit without both input fields having a value
@@ -93,7 +92,7 @@
 - Check that the list's current information is populated in the input boxes
 - Click submit and on the 'list edited' page, confirm that the link to view items in the list takes you to the list's items page
 - Check in the database and refresh the 'My Lists' page to check the information has been updated
-- Check the elements in this page remain stacked on all screen sizes
+- Check the elements in this page remained on all screen sizes
 
 ### Delete List function:
 - Delete a list from the 'My Lists' page and from an items list page

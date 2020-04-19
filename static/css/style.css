@@ -134,20 +134,18 @@ input {
 .homepage-bottom-right {
     height: 30vh;
     border-top: solid black 4px;
-    border-left: solid black 4px;
 }
 
 .homepage-bottom-left {
     height: 70vh;
     width: 50vw;
+    border-right: solid black 4px;
 }
 
 .bottom-left-picture {
-    width: 50vw;
-    height: 70vw;
-    object-fit: cover;
-    position: absolute;
-    clip: rect(0px,100%,45vw,0px);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .intro-copy {
@@ -369,7 +367,7 @@ input {
 
 @media only screen and (max-width: 425px) {
     .header-row {
-        padding-left: 2vw;
+        padding: 16px;
         margin: 0;
     }
 }
@@ -444,10 +442,6 @@ input {
 
 /*------------------------------------------------- My Lists Page */
 
-/* Small screen line breaks hidden */
-.sm-linebreak {
-    display: none;
-}
 
 @media only screen and (max-width: 620px) {
     .mylist-container {
@@ -464,11 +458,6 @@ input {
     .list-filter-styling {
         padding: 5%;
         margin: 0;
-    }
-
-    /* Line breaks appearing in small screen */
-    .sm-linebreak {
-        display: block;
     }
 
     .sm-button-style {
