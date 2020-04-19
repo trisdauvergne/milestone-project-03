@@ -238,7 +238,9 @@ The format of this page will be the same across all screen sizes.
 Testing information can be found in the separate testing file which can be accessed [here](https://github.com/trisdauvergne/milestone-project-03/blob/00d1baa9a31a3c0238660b9be2836eee7824d2c7/TESTING.md).
 
 ## Data structure
-The data for this project is stored within 1 x collection with the data schema visualised here. 
+The data for this project is stored within a collection with the data schema visualised [here](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/readme_images/wt_data_structure.jpg).
+
+The main focus of the project is for the user to build lists and for items to belong to lists and only ever be viewed within the context of the list. For this reason, lists are created with items added to them as nested arrays to ensure that lists will always remain the parent and items will always be the child that will follow the parent. 
 
 ## Credits
 
