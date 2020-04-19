@@ -236,3 +236,23 @@ The format of this page will be the same across all screen sizes.
 
 ## Testing
 
+Testing information can be found in the separate testing file which can be accessed [here](https://github.com/trisdauvergne/milestone-project-03/blob/00d1baa9a31a3c0238660b9be2836eee7824d2c7/TESTING.md).
+
+## Credits
+
+### Content
+- Copy for the site has been written by Tristan Dauvergne
+- Copy written within the item rows has been created based on information from the online retailers 
+
+### Media
+- Cover images by Mike Von on [Unsplash](https://unsplash.com/@thevoncomplex)
+
+### Acknowledgments
+This site has been built as my Milestone 3 Project to demonstrate my understanding of Python, object-oriented programming, the Flask framework, non-relational databases and non-relational data modelling. I decided to go down the route of an online shopping app for the following reasons: 
+1. I do 90% of my shopping online and frequently online window shop. I am the target audience for this project and often forget what I've seen and where I've seen it which makes the end action of purchasing something more difficult
+2. I'm fascinated by how a huge number of people are changing their behaviours and spending their money online rather than in store. This led me to think of what could be done to make me consider what could be done to help the more slow-burning experience
+3. The project would allow me to consider ways of considering the online retailers that I am drawn to 
+
+The design inspiration from this site comes from many places including typographic posters, exhibition catalogues and digital portfolio structuring - all of which display a lot information and need a layout that doesn't distract from the information itself.
+
+I have been guided through this project by my mentor Brian Macharia who has given me professional guidance to improve the UX of this site.
