@@ -115,5 +115,6 @@
 1. Asked fellow students to look at the site and report any issues they encountered. Issues encountered include:
 - No confirmation before deleting a list or item, this will be implemented at a later date.
 - Intro copy on welcome page disappeared behind image on wide screen sizes. This has been rectified
+- It was noticed that it is quite difficult to add an image link from a mobile. For that reason the 'link to image' field in the form isn't required and the form will submit without it. This will be further explored at a later date.
 2. Friends have tested the site for readability and ease of use
 3. The website has been viewed on different browsers, no issues were found

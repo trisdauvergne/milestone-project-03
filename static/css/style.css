@@ -15,6 +15,10 @@ body {
     padding: 16px 0 !important;
 }
 
+.instructions {
+    font-size: 10px;
+    font-weight: 400;
+}
 /* Remove the bootstrap toggle icon */
 .dropdown-toggle::after {
     display: none !important;
