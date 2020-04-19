@@ -1,7 +1,5 @@
 ![Want That logo](readme_assets/readme_images/want_that_logo.jpg "Want That logo")
 
-# WANT that
-
 # A site for keen online shoppers and window shoppers who can't keep track of everything that catches their eye.
 
 View the project on Heroku [here](https://want-that-ms3.herokuapp.com/)
@@ -242,6 +240,37 @@ Testing information can be found in the separate testing file which can be acces
 The data for this project is stored within a collection with the data schema visualised [here](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/readme_images/wt_data_structure.jpg).
 
 The main focus of the project is for the user to build lists and for items to belong to lists and only ever be viewed within the context of the list. For this reason, lists are created with items added to them as nested arrays to ensure that lists will always remain the parent and items will always be the child that will follow the parent. 
+
+## Deployment
+
+This project was developed using the [Gitpod](https://www.gitpod.io/) IDE, commited to Git and pushed to Github using its built in function. 
+
+The following steps were taken to deploy this page from its [Github](https://github.com/trisdauvergne/milestone-project-03) repository to Github pages:
+
+1. Log into [GitHub](https://github.com/)
+2. Select trisdauvergne/milestone-project-03 from the list of repositories
+3. Select 'Settings' from the row of menu items on screen
+4. Scroll down to the 'Github Pages' section
+5. Under 'Source', click the drop down menu and select 'Master Branch'
+6. The page is automatically refreshed and the website is now deployed
+7. The link can now be found in the same 'Github Pages' section after 'Your page is now published at...'
+
+At the moment of submitting this Milestone project the Development Branch and Master Branch are identical.
+
+This project has been pushed and deployed to the cloud application platform [Heroku](https://www.heroku.com/).
+
+The following steps were taken to deploy this page from Gitpod to its deployed [Heroku page](https://want-that-ms3.herokuapp.com/)
+
+1. Create a new app in Heroku
+2. In your Gitpod workspace, log in to Heroku in the CLI 
+3. Check the apps to check the Heroku app has been listed
+4. Create a requirements.txt file
+5. Perform a commit to the git repository, then associate the heroku application as a remote master branch
+6. Create a procfile to include 'web: python run.py' in it
+7. Perform a commit then push to Heroku with 'git push heroku master' in the CLI 
+8. Check the IP and Config Vars are set on Heroku so it will know how to run the Flask application
+
+Further documentation on deploying to Heroku with Git can be found [here](https://devcenter.heroku.com/articles/git)
 
 ## Credits
 
