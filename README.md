@@ -19,14 +19,13 @@ NOTE: This site has been designed with multiple users in mind. A login system wi
 ### Site Users - who is the site focused on?
 1. Gemma, “I have to go to a wedding in August and need a new outfit. I’m not particularly brand loyal and have been browsing lots of different websites trying to find something. I’ve seen lots of things but can’t keep track of everything! I need to start a list of all the things I’ve seen online so I can easily pick something when I'm ready.”
 2. Phil, “Work has been quiet so I’m spending a lot of time browsing online. I’m not going to have as much money this month as I normally do, so will wait until next payday to treat myself. I have a few favourite brands and want to collate links to their new stuff in one place so when I’ve got money in the bank, I know what I’m going to buy! I will need to remove items, depending on how much money I have.”
-3. Jessica, “I’ve been making a list of jackets that I like on WANT THAT but saw someone wearing one of them and it looked hideous. I need to take it off my list.”
-4. Annika, “I love online shopping because I hate going into actual shops nowadays. I was building a list of things on WANT THAT for my boyfriend’s birthday and have now bought him something. I need to get rid of the birthday list.”
-5. Max, "I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use WANT THAT to collate all the things I've seen. When I'm ready to buy something, I'll check my list and go to the retailer's site. I used to forget what I wanted before!"
-6. Ginny, "I've made a list on WANT THAT and something has now gone on sale. I want to update the item with the new price (and buy it as soon as possible before it's sold out)"
-7. Gabrielle, "I've got so many lists and it's a nightmare trying to find something in random order. I will sort lists alphabetically to make my search easier"
-8. Harry, "I've got a list of things I want but not all of them are important. I want to see which items I've marked as 'need urgently' to buy today."
-9. James, "I've been making a list of white trainers and really want to buy the Adidas ones. I will sort the list alphabetically to see the Adidas ones first."
-10. Jakeline, "I want to buy something on my list, but ideally not the most expensive thing. I will sort the list to show the prices in ascending order"
+3. Annika, “I love online shopping because I hate going into actual shops nowadays. I was building a list of things on WANT THAT for my boyfriend’s birthday and have now bought him something. I need to get rid of the birthday list.”
+4. Max, "I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use WANT THAT to collate all the things I've seen. When I'm ready to buy something, I'll check my list and go to the retailer's site. I used to forget what I wanted before!"
+5. Ginny, "I've made a list on WANT THAT and something has now gone on sale. I want to update the item with the new price (and buy it as soon as possible before it's sold out)"
+6. Gabrielle, "I've got so many lists and it's a nightmare trying to find something in random order. I will sort lists alphabetically to make my search easier"
+7. Harry, "I've got a list of things I want but not all of them are important. I want to see which items I've marked as 'need urgently' to buy today."
+8. James, "I've been making a list of white trainers and really want to buy the Adidas ones. I will sort the list alphabetically to see the Adidas ones first."
+9. Jakeline, "I want to buy something on my list, but ideally not the most expensive thing. I will sort the list to show the prices in ascending order"
 
 ### 'WANT THAT' is the best place for users to achieve their goals because:
 - The site is easy to navigate with clear steps for navigating through the site
@@ -246,10 +245,11 @@ The main focus of the project is for the user to build lists and for items to be
 
 ### Content
 - Copy for the site has been written by Tristan Dauvergne
-- Copy written within the item rows has been created based on information from the online retailers 
+- Copy written within the item rows has been created based on information from linked external online retailers 
 
 ### Media
 - Cover images by Mike Von on [Unsplash](https://unsplash.com/@thevoncomplex)
+- Images used in the lists are linked directly to the retailers' websites
 
 ### Acknowledgments
 This site has been built as my Milestone 3 Project to demonstrate my understanding of Python, object-oriented programming, the Flask framework, non-relational databases and non-relational data modelling. I decided to go down the route of an online shopping app for the following reasons: 
