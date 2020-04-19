@@ -1,12 +1,14 @@
-# A site for keen online shoppers and window shoppers who can't keep track of everything that catches their eye.
+![Want That logo](readme_assets/readme_images/want_that_logo.jpg "Want That logo")
 
 # WANT that
+
+# A site for keen online shoppers and window shoppers who can't keep track of everything that catches their eye.
 
 View the project on Heroku [here](https://want-that-ms3.herokuapp.com/)
 
 ## An introduction to the project
 
-The 'WANT THAT' app will allow fashion-following online shoppers to compile lists of items from various online stores. It will be geared towards people who shop with multiple online retailers, like the online ‘window’ shoppers who browse their favourite brands’ websites to see what new items they might have released, see something they like but aren’t in a rush to purchase (and may be waiting until payday). Or the smart-shoppers who make informed decisions by browsing and comparing multiple retailers’ websites in the search for something specific, then need somewhere to store everything they find (instead of having hundreds of tabs open). The 'WANT THAT' app will make it easy for users to remember items they had discovered earlier and just as easy to jump to the retailers website to click buy. 
+The 'Want That' app will allow fashion-following online shoppers to compile lists of items from various online stores. It will be geared towards people who shop with multiple online retailers, like the online ‘window’ shoppers who browse their favourite brands’ websites to see what new items they might have released, see something they like but aren’t in a rush to purchase (and may be waiting until payday). Or the smart-shoppers who make informed decisions by browsing and comparing multiple retailers’ websites in the search for something specific, then need somewhere to store everything they find (instead of having hundreds of tabs open). The 'Want That' app will make it easy for users to remember items they had discovered earlier and just as easy to jump to the retailers website to click buy. 
 
 The user will be able to create a new list, such as a list for a birthday present or new items for a summer wardrobe. The user can then add items to the list, with information such as the brand name, price, link to the product, a short description and an image for ease of reference. When reviewing items in the list, the user will also be able to easily click through to the online retailer in order to make their purchase. The items in the user's list can be edited easily and if the user is no longer interested in the item or has already purhcased it, they can easily delete the item from the list. 
 
@@ -19,15 +21,15 @@ NOTE: This site has been designed with multiple users in mind. A login system wi
 ### Site Users - who is the site focused on?
 1. Gemma, “I have to go to a wedding in August and need a new outfit. I’m not particularly brand loyal and have been browsing lots of different websites trying to find something. I’ve seen lots of things but can’t keep track of everything! I need to start a list of all the things I’ve seen online so I can easily pick something when I'm ready.”
 2. Phil, “Work has been quiet so I’m spending a lot of time browsing online. I’m not going to have as much money this month as I normally do, so will wait until next payday to treat myself. I have a few favourite brands and want to collate links to their new stuff in one place so when I’ve got money in the bank, I know what I’m going to buy! I will need to remove items, depending on how much money I have.”
-3. Annika, “I love online shopping because I hate going into actual shops nowadays. I was building a list of things on WANT THAT for my boyfriend’s birthday and have now bought him something. I need to get rid of the birthday list.”
-4. Max, "I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use WANT THAT to collate all the things I've seen. When I'm ready to buy something, I'll check my list and go to the retailer's site. I used to forget what I wanted before!"
-5. Ginny, "I've made a list on WANT THAT and something has now gone on sale. I want to update the item with the new price (and buy it as soon as possible before it's sold out)"
+3. Annika, “I love online shopping because I hate going into actual shops nowadays. I was building a list of things on 'Want That' for my boyfriend’s birthday and have now bought him something. I need to get rid of the birthday list.”
+4. Max, "I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use 'Want That' to collate all the things I've seen. When I'm ready to buy something, I'll check my list and go to the retailer's site. I used to forget what I wanted before!"
+5. Ginny, "I've made a list on 'Want That' and something has now gone on sale. I want to update the item with the new price (and buy it as soon as possible before it's sold out)"
 6. Gabrielle, "I've got so many lists and it's a nightmare trying to find something in random order. I will sort lists alphabetically to make my search easier"
 7. Harry, "I've got a list of things I want but not all of them are important. I want to see which items I've marked as 'need urgently' to buy today."
 8. James, "I've been making a list of white trainers and really want to buy the Adidas ones. I will sort the list alphabetically to see the Adidas ones first."
 9. Jakeline, "I want to buy something on my list, but ideally not the most expensive thing. I will sort the list to show the prices in ascending order"
 
-### 'WANT THAT' is the best place for users to achieve their goals because:
+### 'Want That' is the best place for users to achieve their goals because:
 - The site is easy to navigate with clear steps for navigating through the site
 - The site's styling aids accessibility, with light backgrounds, dark text and minimal clutter
 - It provides users with a solution to group items that have caught their attention
@@ -109,12 +111,12 @@ NOTE: This site has been designed with multiple users in mind. A login system wi
 
 ## FEATURES
 
-Each page features a **navigation bar** that includes a clickable **'WANT THAT' logo**, a link to **view 'My lists'** (which will open a page displaying the existing lists), a link to **create a new list** and a link to **add an item**. The navbar is always at the top of the page and is **sticky**, remaining at the top of the viewport while the user scrolls down. When clicked, the logo takes the user to the welcome page. On a screen size smaller than a tablet, the links to 'My lists', create a list and add an item will become a collapsible element. 
+Each page features a **navigation bar** that includes a clickable **''Want That' logo**, a link to **view 'My lists'** (which will open a page displaying the existing lists), a link to **create a new list** and a link to **add an item**. The navbar is always at the top of the page and is **sticky**, remaining at the top of the viewport while the user scrolls down. When clicked, the logo takes the user to the welcome page. On a screen size smaller than a tablet, the links to 'My lists', create a list and add an item will become a collapsible element. 
 
 The site's design is clean and crisp to aid readability and accessibility. The stripped back design also serves avoids distracting from the item information and images. Each of the **active links** on the site has a colour when hovered over to introduce colour subtly without distracting from the images and information. On a screen smaller than a tablet, the **hover effect** is replaced with coloured lines under the text to indicate they are active. 
 
 ### Welcome Page
-The site opens on the welcome page, which features a brief introduction with the purpose of WANT THAT, along with two streetwear / fashion related images that make the site feel more aspirational and lifestyle oriented. There is a button with the word **'ENTER'** which invites the user to enter the site and start building lists. The text is black against a white background to aid accessibility. The images and text will appear divided across four boxes on a desktop and tablet sized screen. On a mobile sized screen, the four boxes will reduce to two, with the intro at the top and the enter button and a background image on the bottom. The text over the background image is bold and white to ensure it is easily read whilst creating impact.
+The site opens on the welcome page, which features a brief introduction with the purpose of 'Want That', along with two streetwear / fashion related images that make the site feel more aspirational and lifestyle oriented. There is a button with the word **'ENTER'** which invites the user to enter the site and start building lists. The text is black against a white background to aid accessibility. The images and text will appear divided across four boxes on a desktop and tablet sized screen. On a mobile sized screen, the four boxes will reduce to two, with the intro at the top and the enter button and a background image on the bottom. The text over the background image is bold and white to ensure it is easily read whilst creating impact.
 
 ### My Lists Page
 When the user clicks on 'ENTER' it takes them to the 'My lists' page which shows all the existing lists in the database. These are displayed clearly in rows to allow for clear definition between each list. The **list name** of every list in the database is displayed, underneath which is a brief description, with options to **add to the list**, **edit the list** or **delete the list** beneath the description. The list name is underlined to encourage the user to click on the name. On a desktop and tablet sized screen, the options are formatted in a sentence structure but are stacked on a mobile device. 
@@ -167,7 +169,7 @@ The format of this page will be the same across all screen sizes.
 
 #### Every page
 - **Navigation bar** on every page, allowing the user to easily navigate across the site
-- **'WANT THAT' logo** to take the user back to the welcome page if desired
+- **'Want That' logo** to take the user back to the welcome page if desired
 - **View 'My lists'** option so the user can easily see all existing lists
 - **Create a new list** to easily allow the user to create a new list
 - **Add an item** to encourage the user to add items to existing lists

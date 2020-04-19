@@ -1,6 +1,6 @@
-# Logo
+![Want That logo](readme_assets/readme_images/want_that_logo.jpg "Want That logo")
 
-# Testing 'The Studes' website
+# Testing the 'Want That' app 
 
 ## Testing
 - HTML validated using [W3C Validator](https://validator.w3.org/) _NOTE: Errors sometimes appear which are relating to external retailer images and their associated code._
@@ -18,11 +18,11 @@
 - This user can do this in minimum of 3 steps: _Click **ENTER** on the welcome page > Click on their a chosen **list name** on the My Lists page > Filter through their items and click **Delete item**_
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/user_journey_screenshots/user_story02.jpg)
 
-3. _“I love online shopping because I hate going into actual shops nowadays. I was building a list of things on WANT THAT for my boyfriend’s birthday and have now bought him something. **I need to get rid of the birthday list**.”_
+3. _“I love online shopping because I hate going into actual shops nowadays. I was building a list of things on 'Want That' for my boyfriend’s birthday and have now bought him something. **I need to get rid of the birthday list**.”_
 -This user can achieve their mission in 2 steps: _Click **ENTER** on the welcome page > Find their chosen list on the My Lists page then click **Delete list** to remove the list
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/user_journey_screenshots/user_story03.jpg)
 
-4. _"I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use WANT THAT to collate all the things I've seen. When I'm ready to buy something, **I'll check my list and go to the retailer's site**. I used to forget what I wanted before!"_
+4. _"I have a lot of free time and spend a lot of time browsing the web. I'm very image conscious and like to keep up to date with fashion and brands and use 'Want That' to collate all the things I've seen. When I'm ready to buy something, **I'll check my list and go to the retailer's site**. I used to forget what I wanted before!"_
 -This user can achieve their mission in 3 steps: _Click **ENTER** on the welcome page > Find their chosen list on the My Lists page > Click on an **item name** to be taken to the retailer's site
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-03/blob/master/readme_assets/user_journey_screenshots/user_story04.jpg)
 
